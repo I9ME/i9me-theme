@@ -1,7 +1,7 @@
 <?php get_template_part('templates/html','head'); ?>
   <header class="header scrollOff">  
     <div class="header__menu-desktop">
-      <div class="container">
+      <div class="container container--header">
        <div class="header__brand">
           <a href="<?php echo home_url(); ?>">            
               <h1 class="header__logo">

@@ -233,8 +233,13 @@ th {
 
 
 
+/*==========================================
+ADITIVOS - DIOGO
+==========================================*/
+
+
 /**
-Padrões DIOGO
+Padrões
 **/
 
 .right-margin {
@@ -272,9 +277,23 @@ Padrões DIOGO
 
 
 /**
-FIM - Padrões DIOGO
+FIM - Padrões
 **/
 
+/**
+HEADER
+*/
+
+
+
+
+/**
+FIM - HEADER
+*/
+
+/*==========================================
+ADITIVOS - DIOGO - FIM
+==========================================*/
 
 
 
@@ -8118,7 +8137,7 @@ button:hover {
         float: left;
         clear: none;
         text-align: inherit;
-        width: 8%;
+        width: 150px;
         margin-left: 0;
         margin-right: 0
     }
@@ -8134,7 +8153,7 @@ button:hover {
         float: left;
         clear: none;
         text-align: inherit;
-        width: 17%;
+        width: 150px;
         margin-left: 0;
         margin-right: 0
     }
@@ -8147,6 +8166,7 @@ button:hover {
 
 @media only screen and (min-width:1023px) {
     .header__brand a {
+        width: 180px;
         display: -webkit-box;
         display: -webkit-flex;
         display: -moz-box;
@@ -8263,22 +8283,33 @@ button:hover {
     }
 }
 
+.header__brand a {
+    position: relative;
+    display: block;
+    width: 150px;
+}
+
 .header__logo {
-    float: left;
+
+    float: none;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    max-width: inherit;
+    min-height: 56px;
+    min-width: 56px;
+    max-height: 56px;
+    max-width: 56px;
     clear: none;
     text-align: inherit;
-    width: 50%;
-    margin-left: 0;
-    margin-right: 0;
     border: 3px solid #fff;
     color: #fff;
     font: 700 1.3125rem Rajdhani, Arial, helvetica, sans-serif;
-    height: 55px;
-    line-height: 21px;
-    margin: 0;
-    padding: 2px 3px;
     text-align: center;
-    width: 52px
 }
 
 .header__logo:after {
@@ -8290,7 +8321,7 @@ button:hover {
 .header__letter {
     float: left;
     clear: none;
-    text-align: inherit;
+    text-align: center;
     width: 50%;
     margin-left: 0;
     margin-right: 0;
@@ -8310,16 +8341,21 @@ button:hover {
 }
 
 .header__name {
-    float: left;
+
+    position: absolute;
+    display: block;
+    width: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    left: 76px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
     clear: none;
-    text-align: inherit;
-    width: 50%;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
     color: #fff;
-    letter-spacing: 5px;
-    margin-top: 3px
 }
 
 .header__name:after {
@@ -8330,19 +8366,16 @@ button:hover {
 
 @media only screen and (min-width:767px) {
     .header__name {
-        display: none
+     
     }
 }
 
 @media only screen and (min-width:1023px) {
     .header__name {
-        float: left;
-        clear: none;
-        text-align: inherit;
-        width: 55%;
-        margin-left: 0;
-        margin-right: 0;
-        display: block
+       
+     display: block;
+        
+        
     }
     .header__name:after {
         content: "";
@@ -8356,11 +8389,20 @@ button:hover {
 }
 
 @media only screen and (min-width:767px) {
+
+  /*Aditivo Diogo */
+    .container--header{
+        position: relative;
+    }
+/*Aditivo Diogo - fim */
+
     .header__menu {
-        float: left;
+        position: absolute;
+        display: block;
+        left: 150px;
         clear: none;
         text-align: inherit;
-        width: 84%;
+        width: calc(100% - 210px);
         margin-left: 0;
         margin-right: 0;
         display: -webkit-box;
@@ -8389,13 +8431,16 @@ button:hover {
 
 @media only screen and (min-width:1023px) {
     .header__menu {
-        float: left;
+        position: absolute;
+        display: block;
         clear: none;
         text-align: inherit;
-        width: 75%;
+        width: calc(100% - 210px);
+        left: 150px;
         margin-left: 0;
         margin-right: 0;
-        margin: 15px 0
+        margin: 15px 0;
+        text-align: center;
     }
     .header__menu:after {
         content: "";
@@ -8628,10 +8673,12 @@ button:hover {
 
 @media only screen and (min-width:767px) {
     .header__redes {
-        float: left;
+        position: relative;
+       
+        float: right;
         clear: none;
         text-align: inherit;
-        width: 8%;
+        width: 60px;
         margin-left: 0;
         margin-right: 0;
         display: -webkit-box;
@@ -8662,10 +8709,11 @@ button:hover {
 
 @media only screen and (min-width:1023px) {
     .header__redes {
-        float: left;
+        position: relative;
+        float: right;
         clear: none;
         text-align: inherit;
-        width: 8%;
+        width: 60px;
         margin-left: 0;
         margin-right: 0;
         text-align: center
