@@ -65,7 +65,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<li class="lista__item">
 							<figure>
 								<a href="<?php echo get_permalink(); ?>">
-									<div class="lista__bordas wow zoomIn" data-wow-duration="1" data-wow-delay="1s">
+									<div class="lista__bordas wow zoomIn" data-wow-duration="1" data-wow-delay="0">
 											<!-- Colocar um BG na tag <i> utilizando a classe correspondente ao icone-->
 											<i class="servicos__<?php echo $slug; ?>">
 												<img class="icon" src="<?php echo $icone; ?>" alt="<?php echo the_title(); ?>" />
@@ -81,7 +81,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						</li>
 						<?php endwhile; ?> 
 						<?php if( is_home() || is_front_page() ): ?>
-						<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="1" data-wow-delay="1s">
+						<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="1" data-wow-delay="0">
 							<a href="<?php echo home_url(); ?>/servicos/#design" class="btn-plus"></a>
 						</div>
 					<?php endif; ?>
@@ -125,7 +125,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<li class="lista__item">
 							<figure>
 								<a href="<?php echo get_permalink(); ?>">
-									<div class="lista__bordas lista__bordas--white wow zoomIn" data-wow-duration="1" data-wow-delay="1s">
+									<div class="lista__bordas lista__bordas--white wow zoomIn" data-wow-duration="1" data-wow-delay="0">
 											<i class="lista__<?php echo $slug; ?>">
 												<img class="icon" src="<?php echo $icone; ?>" alt="<?php echo the_title(); ?>" />
 												<img class="icon-hover" src="<?php echo $icone_hover; ?>" alt="<?php echo the_title(); ?>" />
@@ -141,7 +141,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<?php endwhile; ?>
 					</ul>
 						<?php if( is_home() || is_front_page() ): ?>
-							<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="1" data-wow-delay="1s">
+							<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="1" data-wow-delay="0">
 								<a href="<?php echo home_url(); ?>/servicos/#web" class="btn-plus"></a>
 							</div>
 						<?php endif; ?>	
