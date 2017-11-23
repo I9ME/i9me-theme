@@ -232,6 +232,53 @@ th {
 }
 
 
+
+/**
+Padrões DIOGO
+**/
+
+.right-margin {
+    margin-right: 5%;
+}
+
+.right-margin--interCol {
+    margin-right: 10%;
+}
+
+.right-padding {
+    padding-right: 5%;
+}
+
+.right-padding--interCol {
+    padding-right: 10%;
+}
+
+
+.left-margin {
+    margin-left: 5%;
+}
+
+.left-margin--interCol {
+    margin-left: 10%;
+}
+
+.left-padding {
+    padding-left: 5%;
+}
+
+.left-padding--interCol {
+    padding-left: 10%;
+}
+
+
+/**
+FIM - Padrões DIOGO
+**/
+
+
+
+
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
