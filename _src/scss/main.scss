@@ -1,0 +1,78 @@
+/*!
+ *
+ * Desenvolvedor: Bruno Lima - brunolimadevelopment@gmail.com
+ */
+
+//==========================================================================
+// CONFIGURAÇÕES
+// Importar classes Configurações do SASS: Mixings, Placeholder e Módulos
+//==========================================================================
+
+@charset "UTF-8";
+@import 'config';
+
+//==========================================================================
+// MODULOS
+//==========================================================================
+
+@include buttons;
+
+//==========================================================================
+// SECTIONS
+// Importar classes CSS das seções do site
+// Ex: @import 'sections/topo';
+//==========================================================================
+
+.main {
+    min-height: 600px;
+}
+
+.img-radius {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.centerAll {
+    @extend %centerPositionAll;
+}
+
+//HEADER
+@import 'sections/header';
+@import 'sections/menus';
+@import 'sections/banner';
+@import 'sections/portfolio';
+@import 'sections/servicos';
+@import 'sections/sobre';
+@import 'sections/blog';
+@import 'sections/atendimento';
+@import 'sections/depoimentos';
+@import 'sections/newsletter';
+@import 'sections/title';
+
+
+//MODULOS
+@import 'modulos/groupboxes';
+@import 'modulos/boxes';
+@import 'modulos/lista';
+@import 'modulos/banner-single';
+@import 'modulos/breadcrumb';
+
+//PAGES
+@import 'pages/portfolio-interna';
+@import 'pages/portfolio-single';
+@import 'pages/servico-single';
+@import 'pages/sobre';
+@import 'pages/atendimento';
+@import 'pages/blog';
+@import 'pages/blog-post';
+
+//RODAPE
+@import 'sections/footer';
+
+
+//==========================================================================
+// VENDORS
+// Importa classes dos VENDORS do site como Modal, OWL e Touch Touch
+//==========================================================================
+@import 'vendor/index';

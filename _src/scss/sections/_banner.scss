@@ -1,0 +1,184 @@
+.banner{
+  $self : &;
+  @extend %boxFull;
+  @include span(1);
+  position: relative;
+  
+  @include e('video'){
+    @include span(1);
+    min-height: 568px;
+    width: auto;
+    
+    @include respond-to(sm){
+      @include span(1);
+      min-height: auto;
+    }
+  }
+
+  @include e('layer'){
+    @include span(1);
+    background-color: rgba(0, 24, 77, 0.75);
+    position: absolute;
+    height: 100%;
+    
+    @include respond-to(sm){}
+  }
+
+  @include e('info'){
+    text-align: center;
+    flex-direction: column;
+    color: $white;
+    transform: translateY(170%);
+
+    @include respond-to(sm){
+      margin-top: 73px;
+      min-height: 264px;
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      position: relative;
+      transform: translateY(50%);
+    }
+
+    @include respond-to(md){
+      margin: 0 auto;
+      min-height: 210px;
+      max-width: 670px;
+      display: block;
+      width: 100%;
+      transform: translateY(100%);
+      
+    }
+
+    
+  }
+
+  @include e('title'){
+    @include fonts(700,25);
+    margin: 0;
+    width: 100%;
+    
+    @include respond-to(sm){
+      @include fonts(700,30);
+      margin: 0;
+    }
+
+    @include respond-to(md){
+      @include fonts(700,50);
+      margin-bottom: 30px;
+
+    }
+
+    
+   
+  }
+
+  @include e('subtitle'){
+    font-size: 16px;  
+    width: 100%;
+      
+    @include respond-to(sm){
+      @include fonts(300,18);
+      display: block;
+      margin-bottom: 0px;
+    }
+
+    @include respond-to(md){
+      @include fonts(300,25);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    
+
+  }
+
+ 
+
+  @include e('elemento'){
+    animation: sdb07 2s infinite;
+    border-left: 1px solid $white;
+    border-bottom: 1px solid $white;
+    box-sizing: border-box;
+    height: 24px;
+    left: 50%;
+    margin-left: -12px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+  }
+  @include e('objeto-scroll'){
+      @include span(1);
+      transform: translateY(170%);
+      display: flex;
+      justify-content: center;
+
+      @include respond-to(sm){
+        transform: translateY(50%);
+      }
+      @include respond-to(md){
+        transform: translateY(35px);
+      }
+     
+  }
+
+  .scroll-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 1.2em;
+    font-size: 22px;
+    color: rgba(#fff, .5);
+    border-radius: 2em;
+    border: solid 2px;
+    transition: .4s;
+}
+
+.scroll-icon:hover {
+  background-color: rgba(#fff, .05);
+  color: #fff;
+}
+
+.scroll-icon::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: scroll-icon 2.2s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+@keyframes scroll-icon {
+    0% { transform: translateY(-12px); opacity: 0; }
+   30%, 70% { opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+    
+  
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

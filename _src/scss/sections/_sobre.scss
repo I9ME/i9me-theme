@@ -1,0 +1,211 @@
+.sobre{
+	@extend %boxFull;
+	position: relative;
+	background-color: $blue2;
+	min-height: 380px;
+    background-size: contain;
+	background-image: url(../images/bg-sobre-i9me.png);
+    background-repeat: no-repeat;
+  	
+  	@include respond-to(sm){
+  		height: 900px;
+  		background-size: contain;
+  	}
+  	@include respond-to(md){
+    	height: 460px;
+    	background-size: 45% 100%;
+  		
+  	}
+  	@include respond-to(lg){
+    	height: 622px;
+  	}
+
+
+		@include e('boxleft'){
+			min-height: 198px;
+			//position: relative;
+			//@include span(1);
+			// 		background: url(../images/bg-sobre-i9me.png);
+   // 					background-repeat: no-repeat;
+   // 					background-size: contain;
+   // 					position: relative;
+   // 					height:100%;
+
+   // 					&:after{
+   // 					content: '';
+   // 					position: absolute;
+			// 	    bottom: 214px;
+			// 	    height: 31px;
+			// 	    background: url(../images/after-video.png) no-repeat;
+			// 	    width: 23px;
+			// 	    right: -23px;
+   // 					}
+   // 			@include respond-to(sm){
+   // 					background-size: cover;
+
+   // 			}
+   			@include respond-to(sm){
+   				@include span(1);
+   				min-height: 476px;
+   			}
+			@include respond-to(md){
+				@include span(.39);
+				
+			// 	background-size: 100% 100%;
+			// 	//height: 461px;
+			// 	    //background-attachment: fixed;
+			// 	    //background-repeat: no-repeat;
+			// 	    //background-position: 0% 71%;
+			}
+		//}
+		// @include e('boxleft-title'){
+		// 	//@include span(.42);
+		// 	@include span(1);
+
+
+		// 	@include respond-to(sm){
+		// 		@include span(1);
+		// 		margin-right: 0;
+				
+		// 	}
+
+		// 	@include respond-to(md){
+		// 		@include span(.88);
+		// 		//float: right;
+		// 		//margin-right: 20%;
+		// 	}
+		// 	@include respond-to(lg){
+		// 		@include span(.37);
+		// 		//float: right;
+		// 		//margin-right: 20%;
+		// 	}
+		// }
+		// @include e('boxleft-space'){
+
+		// 	@include respond-to(md){
+		// 		@include span(.12);
+		// 		height:460px;
+
+		// 	}
+		// 	@include respond-to(lg){
+		// 		@include span(.63);
+
+		// 	}
+		 }
+		@include e('box-video'){
+			@include span(1);
+			position: absolute;
+		    left: 0;
+			@include respond-to(sm){
+   				@include span(1);
+   				position: inherit;
+   			}
+
+			@include respond-to(md){
+			 	@include span(.55);
+			 	position: absolute;
+    			right: 0;
+    			left: inherit;
+    			height: 100%;
+
+    			&:after{
+					content: '';
+					position: absolute;
+			 	    bottom: 210px;
+			 	    height: 31px;
+			 	    background: url(../images/after-video.png) no-repeat;
+			 	    width: 23px;
+		 	    	left: -1px;
+		 	    	z-index: 999999;
+   					}
+
+			}
+			@include respond-to(lg){
+			 	//min-height: 709px;
+			 	&:after{
+					
+			 	    bottom: 290px;
+			 	    
+   					}
+
+			}
+		}
+
+		@include e('border'){
+			border: 3px solid $white;
+		    border-radius: 60px;
+		    height: 100px;
+		    width: 100px;
+		    display: inline-block;
+		    padding: 21px 33px;
+    		font-size: 45px;
+		}
+		@include e('play'){
+			background: url(../images/Play.png)no-repeat;
+			width: 100%;
+			height: 190px;
+		    position: absolute;
+		    background-position: center;
+		    background-size: 20%;
+		    @include respond-to(sm){
+		    	height: 424px;
+		    	left: 0;
+    			
+		    }
+			@include respond-to(md){
+				height: 100%;
+    			
+			}	
+		}
+		@include e('play-iframe'){
+		  
+		    	position: absolute;
+		    	left: 0;
+		    	height: 100%;
+		    	right: 0;
+		   
+		    @include respond-to(sm){
+	    		display: block;
+	    		opacity: 0.6;
+		    	width: 100%;
+			}
+		  
+		}
+		@include e('title'){
+			@include span(1);
+			text-align: center;
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    flex-direction: column;
+			transform: translateY(50%);
+			
+			@include respond-to(sm){
+				transform: translateY(200%);
+			}
+			a{
+				position: relative;
+			}
+			h2{
+				margin: 0;
+				color: $white;
+				text-transform: uppercase;
+
+				&:after{
+					position: absolute;
+				    content: "";
+				    border: 2px solid #fff;
+				    max-width: 40px;
+				    width: 100%;
+				    display: block;
+				    transform: translateX(150%)translateY(200%);
+				}
+			}
+			span{
+				color: $white;
+				position: relative;
+			}
+		}
+
+		
+}

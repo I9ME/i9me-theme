@@ -1,0 +1,442 @@
+.header{
+  $self : &;
+  @extend %boxFull;
+  height: 115px;
+  z-index: 9999999999999999;
+  position: fixed;
+  transition: all 0.4s ease;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+
+  @include respond-to(md){
+    @include Display_flex(flex,stretch,center);
+    height: 145px;
+  }
+  
+  @include e('menu-desktop'){
+    padding: 15px 0;
+    transition: all 0.4s ease;
+    width: 100%;
+
+    @include respond-to(sm){
+      @include span(1);
+    }
+  }
+
+  @include e('brand'){
+    @include span(.70);
+
+    @include respond-to(sm){
+      @include span(.08);
+    }
+
+    @include respond-to(md){
+      @include span(.17);
+    }
+
+    a{
+      @include respond-to(md){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    @include m('footer'){
+      @include span(1);
+      @include respond-to(sm){
+        @include span(.25);
+      }
+      @include e('name',$self){
+        @include span(1);
+          text-align: center;
+          margin-top: 20px;
+        @include respond-to(sm){
+          @include span(.67);
+          text-align: center;
+          margin-top: 15px;
+        }
+        display: inline-block;
+      }
+
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include respond-to(sm){
+          display: inherit;
+        }
+      }
+    }
+  }
+
+  @include e('logo'){
+    @include span(.5);
+      border: 3px solid $white;
+      color: $white;
+      @include fonts(700,21);
+      height: 55px;
+      line-height: 21px;
+      margin: 0;
+      padding: 2px 3px;
+      text-align: center;
+      width: 52px;
+  }
+
+  @include e('letter'){
+    @include span(.5);
+    @include fonts(800,23);
+    line-height: 1;
+    
+    @include m('n'){
+      position: relative;
+      right: -13px;
+    }
+  }
+
+  @include e('name'){
+    @include span(.5);
+    text-align: center;
+    color: $white;
+    letter-spacing: 5px;
+    margin-top: 3px;
+
+    @include respond-to(sm){
+      display: none;
+
+    }
+
+    @include respond-to(md){
+      @include span(.55);
+      display: block;
+    }
+    
+  }
+
+  @include e('menu'){
+    display: none;
+   
+    @include respond-to(sm){
+      @include span(.84);
+      @include Display_flex(flex,center,center);
+      margin: 15px 0;
+    }
+
+    @include respond-to(md){
+      @include span(.75);
+      margin: 15px 0;
+    }
+
+    ul{
+      margin: 0;
+      li{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+
+        @include respond-to(sm){
+          margin-right: 20px;
+          width: auto;
+        }
+        @include respond-to(md){
+          margin-right: 30px;
+          width: auto;
+        }
+        a{
+          @include fonts(600,15);
+          color: $white;
+          text-transform: uppercase;
+            @include respond-to(sm){
+              @include fonts(700,15);
+            }
+
+            @include respond-to(md){
+              @include fonts(500,18);
+              &:hover{
+                color: #00a5dc;
+                transition: all 0.4s ease;
+              }
+            }
+        }
+      }
+    }
+  }
+
+  @include e('wd'){
+    margin-left: 15px;
+  }
+
+
+    // //MENU-TOGGLE
+  @include e('toggle'){
+    //on activation 
+    float: right;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid $white;
+    padding: 14px;
+    position: fixed;
+    z-index: 999999999999999;
+    right: 22px;
+
+    // .toggle{ 
+    //   background-color: transparent; 
+    //   width:53px; 
+    //   height: 17px; 
+    //   margin:5px 11px;    
+    //   padding: 24px 13px 24px;
+    //   border-radius: 7px; 
+    //   position:relative; 
+    //   z-index:999; 
+    //} 
+    &.on span{ 
+      background-color: transparent;
+    }
+    &.on{ 
+     background-color:$white; 
+    border: 1px solid #000;
+    padding: 15px;
+    }
+    &.on span{
+    
+      &:before{ 
+        transform: rotate(45deg) translate(9px, 9px); 
+        background-color: #003793; 
+      }
+
+    }
+    &.on span{
+    
+      &:after{ 
+      transform: rotate(-45deg) translate(7px, -8px); 
+      background-color: #003793;
+      }
+    }
+    &.on + .header__menu{
+      position: absolute;
+      left: 0;
+      top: 0; 
+      display:block; 
+      opacity: 1; 
+      visibility:visible; 
+      background: $white;  
+      width:100%;
+      height: calc(100vh - 0px); 
+      z-index: 9999999;  
+
+      @include respond-to(sm){
+        @include span(.70);
+        position: inherit;
+        text-align: center;
+      }
+    
+      @include respond-to(md){
+        @include span(.60);
+        position: inherit;
+        text-align: center;
+      }
+      ul{
+        margin: 85px 0;
+        background: #fff;
+        li{
+        margin: 20px 0;
+        text-align: left;
+        padding-left: 10%;
+          a{
+          color: #003793;
+          @include fonts(700,28);
+          }
+        }
+      }
+      
+     
+    }
+
+  span {
+    position: relative; 
+    display: block; 
+    left: -1px; 
+    top: 10px;
+    height: 6px; 
+    background-color: $white; 
+
+    &:after, 
+    &:before {
+      content: ""; 
+      position: absolute; 
+      left: 0; 
+      top:-12px; 
+      width: 31px; 
+      height: 6px; 
+      background-color: $white; 
+      border-radius: 1px; 
+      transition: all 0.3s; backface-visibility:hidden; 
+    }
+
+    &:after{ 
+     top:12px;
+    }
+  }
+
+  @include respond-to(sm){
+    display: none;
+  }
+
+  @include respond-to(md){
+    display: none;
+  }
+}
+
+
+
+//REDES SOCIAIS
+  @include e('redes'){
+    @include span(.2);
+    display: none;
+   
+    @include respond-to(sm){
+      @include span(.08);
+      text-align: center;
+       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: center;
+    }
+    @include respond-to(md){
+       @include span(.08);
+       text-align: center;
+    }
+
+    i{
+      background: hsla(203, 8%, 68%, 0.12);
+      border-radius: 18px;
+      color: hsl(0, 0%, 100%);
+      //background: $white;
+      //border-radius: 18px;
+     // color: #003ba5;
+      font-size: 15px;
+      height: 24px;
+      padding: 5px 4px;
+      width: 25px;
+    }
+    
+  }
+  @include e('redestop'){
+    margin-bottom: 5px;
+  }
+
+}
+
+
+
+
+
+.main{
+   @extend %boxFull;
+   overflow: hidden;
+}
+
+.scrollOn{
+  background: $white;
+  color: $blue2;
+  z-index: 999999999999999;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+  height: 86px;
+  transition: all 0.5s;
+
+  //.header__brand{
+//    bottom: -38px$i;
+//  }
+//  @include respond-to(md){
+//    .header__brand{
+//      bottom: -27px$i;
+//    }
+//  }
+  .header__logo{
+    color: $blue2;
+    border: 3px solid $blue2;
+  }
+  .header__name{
+    
+    span{
+      color: $blue2;
+    }
+  }
+//  .header__menu{
+//    //transform: translateY(-55%) translateX(-50%);
+//  }
+//  @include respond-to(md){
+//    .header__menu ul{
+//      //padding: 8% 0 6%;
+//        margin: 0;
+//    }
+//  }
+//  .header__menu{
+//    top: 40px;
+//    transition: all .3s;
+//  }
+  .header__menu ul a{
+    color: #005193;
+//    height: 100px;
+  }
+  .header__redestop, .header__redesbottom{
+   
+      i{
+        //border: 1px solid #005193;
+        padding: 4px 3px;
+        color: #005193;
+      }
+   }
+//  .header__redes i{
+//    background: $blue2;
+//    color: $white;
+//  }
+  .header__toggle{
+    margin: 0;
+    background: $blue2;
+    
+    span{
+      
+      
+     &:before{
+        background: $white;
+      }
+      &:after{
+        background: $white;
+      }
+    }
+  }
+  .on + .header__menu{ 
+     display:block; 
+     opacity: 1; 
+     position: absolute$i; 
+     top: 85px$i; 
+     left: 0px$i; 
+     visibility:visible; 
+     background: hsl(0, 0%, 100%);  
+     width:100%; 
+     //height:auto; 
+     z-index: 999;  
+  }
+
+ }
+ .scrollOff{
+ background: transparent;
+ transition: all 0.5s;
+ }
+.scrollOff .header__menu-desktop{
+  padding-top: 45px;
+}
+
+
+
+
+
+
+
+
+
+

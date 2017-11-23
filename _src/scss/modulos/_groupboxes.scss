@@ -1,0 +1,284 @@
+.groupboxes{
+	 $self : &;
+	 @extend %boxFull;
+	 	position: relative;
+		background: #fff;
+		list-style: none;
+		@include respond-to(sm){
+		    //margin-top: 30px;
+		    //margin-bottom: 0;
+		    padding:60px 0;
+			//margin: 0 0 60px;
+			//padding: 0 90px$i;
+		}
+	// @include m('blog'){
+	// 	li{
+	// 		width: 100%;
+	// 		@include respond-to(sm){
+	// 			@include span(.5);
+	// 		}
+	// 	}
+	// }
+	 @include e('boxitem'){
+		@include span(1);
+			position: relative;
+			background: #1172c0;
+			padding: 0 0 40px 0;
+			margin-bottom: 15px;
+			@include respond-to(sm){
+				@include span(.5);
+				padding: 0;
+				margin: 0;
+			}
+
+		&:hover{
+			transition: all .6s;
+		}
+		&:nth-child(2){
+			background: #4080ff;
+		} 
+		&:nth-child(3){
+			background: #4080ff;	
+		}
+		&:nth-child(6){
+			background: #4080ff;	
+		}
+		&:nth-child(7){
+			background: #4080ff;	
+		}
+		&:nth-child(10){
+			background: #4080ff;	
+		}
+		&:nth-child(11){
+			background: #4080ff;	
+		}
+		&:nth-child(13){
+			background: #4080ff;	
+		}
+		&:nth-child(15){
+			background: #4080ff;	
+		}
+		&:nth-child(17){
+			background: #4080ff;	
+		}
+		&:nth-child(19){
+			background: #4080ff;	
+		}
+	 }
+
+	 @include e('hover'){
+		@include span(1);
+			height: auto;
+			margin: 0;
+			//height: 250px;
+			@include respond-to(sm){
+		    	//border: 1px solid rgba(0, 0, 0, 0.1);
+				display: inline-block;
+				max-width: 100%;
+				position: relative;
+				width: 100%;
+			}
+
+	    img{
+	    	display: block;
+	    	width: 100%;
+	    }
+
+	    // @include m('blog'){
+	    // 	background: $white;
+	    // 	margin: 0;
+	    // }
+	}
+
+	@include e('legend'){
+		@extend %transitionAll;
+		    position: relative;
+    		top: inherit;
+    		left: inherit;
+    		background: none;
+    		text-align: center;
+    		padding: 0 5%;
+		    width: 100%;
+
+		@include respond-to(sm){
+    		background-color: rgba(0,13,51,0.92);
+		    bottom: 0;
+		    padding: 0;
+		    top: 0;
+		    left: 0;
+		    display: block;
+			height: 100%;
+		    opacity: 0;
+		    position: absolute;
+		    display: flex;
+		    text-align: left;
+		    align-items: center;
+		    justify-content: flex-end;
+	    	&:hover{
+	    		opacity: 1;
+				transition: all .6s;
+	    	}
+		}
+
+		// @include m('blog'){
+		// 	top: 160px;
+		// 	@include respond-to(sm){
+		// 		top: 0;
+		// 	}
+		// }
+	}
+
+	@include e('border'){
+			border: 0 solid;
+			@include respond-to(sm){
+				@include beforesfourleft($brColor:  $blue4);
+					min-height: 142px;
+					width: 100%;
+					border-width: 4px 4px 4px 0;
+			    	border-style: solid;
+			    	border-color: $white;
+					display: block;
+					padding: 30px; 
+					position: relative;
+					margin-right: 7%;
+
+				@include m('right'){
+
+					@include beforesfourright($brColor: $blue4);
+					border-width: 4px 0 4px 4px$i;
+					margin-left: 7%;
+					margin-right: 0%$i;
+					height: auto;
+					margin-left: 7%;
+    
+
+					
+				}
+			}
+				@include m('blog-right'){
+					@include respond-to(sm){	
+					//@include beforesfourright($brColor: $blue4);
+					border-width: 4px 0 4px 4px;
+					margin-left: 7%;
+					margin-right: 0%;
+					height: auto;
+
+					&:before{
+						content: '';
+						border-width: 4px 4px 4px 0px$i;
+						left: 0;
+						right: -35px;
+					}
+					}
+					
+				}
+			@include m('blog'){
+				@include respond-to(sm){
+					&:before {
+				    border-width: 4px 0 4px 4px;
+				    border-style: solid;
+				    border-color: $blue2!important;
+				    content: "";
+				    display: block;
+				    left: -34px;
+				    margin-right: auto;
+				    margin-left: auto;
+				    //padding: 58px 0!important;
+				    position: absolute;
+				    top: -4px!important;
+				    width: 35px;
+				    height: 158px$i;
+
+	   				}
+				}
+					
+					@include respond-to(sm){
+
+
+					min-height: 158px$i;
+					width: 100%;
+					border-width: 4px 4px 4px 0;
+			    	border-style: solid;
+			    	border-color: $white;
+					display: block;
+					padding: 30px; 
+					position: relative;
+					margin-right: 7%;
+
+					}
+			}
+	}
+
+	@include e('title'){
+		@include fonts(700,25);
+		margin: 0;
+		color: $white;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+	}
+	@include e('subtitle'){
+		@include fonts(500,20);
+		margin: 0;
+		color: $white;
+		letter-spacing: 1px;
+		@include m('blog'){
+			display: none;
+			@include respond-to(sm){
+				display: block;
+			}
+		}
+	}
+
+	@include e('vermais'){
+		@include span(1);
+			//margin: 30px 0;
+			text-align: center;
+			line-height: 1px;
+			//height: 100px;
+			display: flex;
+			align-items: center;
+    		justify-content: center;
+    		
+			// a{
+			// 	@extend %borderradius;
+			// }
+			@include respond-to(sm){
+				//margin: 60px 0;
+			}
+			@include m('servicos'){
+				@include span(1);				
+					float: right$i;
+					text-align: center$i;
+				
+				@include respond-to(md){
+					
+				}
+			}
+			.btn-plus{
+				background: url(../images/btn-plus.png);
+				width: 40px;
+				display: inline-block;
+				height: 40px;
+				// @include m('blue'){
+				// 	color: $blue2;
+				// }
+
+				&:hover{
+					background: url(../images/btn-plus-hover.png);
+					width: 40px;
+					display: inline-block;
+					height: 40px;
+					transition: all .4s ease;
+				}
+			}
+	}
+}
+
+.item{
+	margin: 0;
+
+	@include respond-to(sm){
+		
+	}
+}

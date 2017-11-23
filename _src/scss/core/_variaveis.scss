@@ -1,0 +1,154 @@
+//==========================================================================
+// VARIAVEIS
+// Definição das variavéis do Tema
+// Não remover nenhuma das variavéis para evitar crash do SASS
+//==========================================================================
+
+//-------------------------------
+// GRID
+// Define as variáveis da dimensão do projeto
+//-------------------------------
+
+//Classe padrão do Container
+$global-div: 'container';
+
+//Dimensão do container
+$lg-max : 1240px;
+$lg-md  : 90%;
+$lg-sm  : 768px;
+$lg-xs  : 568px;
+
+// Espaçamento Latera Default
+$space-lateral: 15;
+
+// Border Radius Default
+$border-radius: 5px;
+
+//-------------------------------
+// FONTS
+// Define as fonts do projeto
+//-------------------------------
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700');
+
+
+$font-default       : 'Rajdhani', Arial, helvetica, sans-serif !default;
+$font-secundaria    : 'Rajdhani' !default;
+$font-header        : 'Rajdhani' !default;
+
+//-------------------------------
+// Cores
+// Cuidado ao deletar variáveis.
+// Pode causar CRASH no SASS
+//-------------------------------
+
+$white		: #fff;
+$black		: #000;
+
+//header
+$white		: #ffffff;
+$black		: #000;
+$blue1		: #0b244a;
+$blue2		: #005193;
+$blue3		: #4267b2;
+$blue4		: #173e77;
+$blue5		: #00375d;
+$blue6		: #0b293f;
+$blue7		: #0087EA;
+$blue8		: #00a5dc;
+$blue9		: #0072b8;
+$gray1		: #eaeaea;
+
+//ALERTS
+$sucesso	: #098809;
+$erro 		: #ed0000;
+
+$cor-primaria	 : #173e77;
+$cor-secundaria  : #3dc0b9;
+$cor-terciaria	 : #323232;
+$cor-titulos     : #7c7c7c;
+$cor-extra		 : #f9f9f9;
+$cor-dark        : #242424;
+$rodape          : $cor-terciaria;
+
+//BACKGROUND
+$cor-bg			 : $white;
+
+//COR TEXTOS
+$cor-texto		 : #a8a8a8;
+$cor-texto-i  	 : rgba($cor-bg, .75);
+
+//COR LINKS EM TEXTOS
+$cor-link   :	$cor-secundaria;
+$cor-link-h :	darken($cor-link, 10%);
+$cor-link-v :	lighten($cor-link, 15%);
+
+// COR TOPO INTERNO
+$cor-topo-int:  #8c8c8c;
+
+// COR RODAPE
+$cor-rdp-fonts  : 	#6a6a6a;
+
+
+// Cor menu
+$bgMenu    : #f7f7f7;
+$hoverMenu : #d5d4d5;
+$corMenu   :  #9a9a9a;
+
+//-------------------------------
+// FORMS
+// Não remover para não dar CRASH no SASS
+// Definir cores, sombras e atribuir um nome
+//-------------------------------
+
+$input1 	 : $white;
+$input2 	 : darken($cor-primaria, 20%);
+$input3		 : $white;
+
+$cor 	 	 : $cor-texto, $white, $cor-texto;
+$inputs 	 : $input1, $input2, $input3;
+$classes  	 : newsletter, sidebar, agenda;
+
+//-------------------------------
+// MODULOS
+// Habilita a importação das classes CSS dos Modulos
+// Definir com true ou false.
+//-------------------------------
+
+$grid      : 'true';
+$btns      : 'true';
+$icones    : 'false';
+$forms     : 'false';
+$lista     : 'false';
+$bread     : 'false';
+$toggle    : 'false';
+$wpress    : 'false';
+$videores  : 'false';
+
+//-------------------------------
+// VENDORS
+// Habilita a importação das classes CSS dos Vendors
+// Definir com true ou false.
+//-------------------------------
+
+$modal	    : 'false';
+$owl        : 'false';
+$fancybox   : 'false';
+$touch		: 'true';
+$accordeon  : 'false';
+$select  	: 'false';
+$animate  	: 'false';
+
+//Definições de cores e estilos
+//Accordeon
+$acc-color 	 	: scale_color($black, $lightness: 20%);
+$acc-bg	 	 	: mix($black, $white, 10%);
+$acc-head	 	: $cor-extra;
+$acc-head-text	: $white;
+$acc-hvr	 	: darken($cor-primaria, 5%);
+$acc-act	 	: scale_color($cor-primaria, $lightness: -20%);
+
+//==========================================================================
+// CUSTOM VARS
+// Define as variáveis customizadas
+//==========================================================================
+$i : !important;

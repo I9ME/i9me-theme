@@ -1,0 +1,132 @@
+.depoimentos{
+	@extend %boxFull;
+		position: relative;
+		margin-bottom: 30px;
+
+
+		@include e('carousel'){
+			@include span(1);
+			display: inline-block;
+			margin-top: 30px;
+			overflow: hidden;
+
+			.owl-controls{
+				margin: 30px 0;
+			}
+			@include respond-to(sm){
+				margin-top: 60px;
+
+				.owl-controls{
+					margin: 60px 0;
+				}
+			}
+		}
+		@include e('boxleft'){
+			@include span(1);
+				text-align: center;
+				margin-bottom: 20px;
+
+
+			img{
+				border-radius: 80px;
+    			//border: 1px solid #000;
+				}
+
+			@include respond-to(sm){
+				@include span(.40);
+				background: #fff;
+				margin-right: 4%;
+				text-align: left;
+				//display: inline-block;
+				//padding-right: 9%;
+			}
+		}
+		@include e('img-cicle'){
+			width: 100px;
+		    height: 100px;
+		    display: block;
+		    margin: 0 auto;
+		}
+		@include e('item'){
+			@include span(1);
+			position: relative;
+			align-items: center;
+    		justify-content: center;
+    		display: flex;
+			flex-direction: column;
+
+			@include respond-to(sm){
+				padding: 0;
+				flex-direction: inherit;
+			}
+			@include respond-to(md){
+				padding: 30px 0;
+			}
+		}
+		@include e('title'){
+			margin: 10px 0;
+			display: block;
+
+			span{
+				@include fonts(300, 16);
+			}
+		}
+		.owl-dots .owl-dot.active{
+			background-color: $blue2;
+		}
+		@include e('subtitulo'){
+			@include fonts(300, 16);
+			display: block;
+			
+			a{
+				color: $blue2;
+
+				&:hover{
+					color: $black;
+				}
+			}
+		}
+		@include e('info'){
+			margin: 0;
+		}
+		@include e('boxright'){
+			@include span(1);
+			position: relative;
+			border: 1px solid #eee;
+			min-height: 180px;
+			padding: 15px;
+			@include respond-to(sm){
+				@include span(.80);
+				padding: 15px;
+					
+				&:after {
+					content: '';
+					background: url(../images/aspas.png)no-repeat;
+					width: 36px;
+					height: 36px;
+					position: absolute;
+    				top: -20px;
+    				left: 119px;
+					display: block;
+				}
+			}
+			@include respond-to(md){
+				@include span(.60);
+				padding: 30px;
+
+			}
+
+
+		}
+		@include e('hidden'){
+			display: none$i;
+
+			@include respond-to(sm){
+				display: block;
+			}
+		}
+		// @include e('boxright'){
+		// 	border: 1px solid #aaa;
+		// 	padding: 30px;
+		// }
+}

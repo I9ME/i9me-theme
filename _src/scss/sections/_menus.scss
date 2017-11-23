@@ -1,0 +1,91 @@
+/*.menu__nav {
+
+    .menu-item {
+        display: inline-block;
+        vertical-align: middle;
+        color: $white;
+        //width: 100%;       
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            color: $black;
+            display: block;
+            font-weight: 600;
+            font-size: rem(15);
+            position: relative;
+            padding: rem(5);
+            letter-spacing: 1px;
+            z-index: 2;
+            text-align: center;          
+            font-family: $font-default;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+
+        @include m('active'){
+            color: $white;
+        }
+
+        @include m('parent--active'){
+            color: $white;
+        }
+    }
+
+    .menu-item-has-children {
+        &:hover {
+            z-index: 10;
+        }
+
+        .sub-menu  {
+            opacity: 1;
+        }
+
+        > a {
+            z-index: 10;
+            color: #0b4e82;
+
+            &:hover {
+                color: #0b4e82;
+                border-color: transparent;
+            }
+        }
+    }
+
+    //RODAPE
+    @include m('rodape'){
+        @include span(1);
+        margin-top: 0 $i;
+
+        .menu-item {
+            
+            display: block;
+
+            a {
+                @include fonts(300, 14);
+                border-bottom: 0;
+                color: #868686;
+                padding: 10px 0 0;
+                text-align: left;                
+
+                 &:hover {
+                    color: #868686; 
+                    border-bottom: 0;
+                }
+            }
+        }        
+    }    
+}
+
+.rodape__bloco--sec{ 
+    .menu__nav{
+        a{
+            @include fonts(600, 14);
+        }
+    }
+
+
+}*/

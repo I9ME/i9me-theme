@@ -1,0 +1,259 @@
+.page-sobre{
+	$self : &;
+  @extend %boxFull;
+}
+
+
+.dna{
+	$self : &;
+	@extend %boxFull;
+	position: relative;
+  //min-height: 760px;
+
+}
+.resultados{
+  $self : &;
+  @extend %boxFull;
+  background: #eaeaea;
+  position: relative;
+  //min-height: 867px;
+  z-index: -1;
+
+}
+
+.clientes{
+   $self : &;
+  @extend %boxFull;
+  background: #005193;
+  position: relative;
+  z-index:999999;
+
+  @include e('carousel'){
+    @extend %boxFull;
+
+      @include respond-to(sm){
+        margin-bottom: 60px;
+      }
+    
+
+    .owl-controls{
+      margin-bottom: 60px;
+      
+      @include respond-to(sm){
+        margin-bottom: 30px;
+      }
+    }
+    .owl-dots .owl-dot.active{
+      background: $white;
+    }
+  }
+
+  @include e('item'){
+    min-height: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(sm){
+      min-height: 250px;
+    }
+  }
+}
+
+.equipe{
+  $self : &;
+  @extend %boxFull;
+  background: #fff;
+  position: relative;
+  z-index: 9;
+  @include m('m'){
+    padding-bottom: 30px;
+    background: #e9e9e9;
+    @include respond-to(sm){
+      padding-bottom: 90px;
+      
+      
+    }
+  }
+  @include e('background'){
+    @include span(1);
+    background: #e9e9e9;
+    height: 310px;
+
+    @include respond-to(sm){
+      height: 380px;
+    }
+
+    @include respond-to(md){
+      height: 450px;
+    }
+  }
+
+  @include e('lista'){
+    @include span(1);
+  }
+   @include e('item'){
+    @include span(1);
+   text-align: center;
+  }
+   @include e('profissional'){
+    min-height: 233px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    background: url(../images/profissional.png)no-repeat;
+    background-size: contain;
+    position: relative;
+    background-position: center;
+    @include respond-to(sm){
+       background-size: auto;
+      
+     //background-size: 96%;
+    }
+    @include respond-to(md){
+      // width: 77%;
+
+    }
+    &:before{
+      content:'';
+      background: url('../images/before-profissional.png')no-repeat;
+      position: absolute;
+      width: 100%;
+      height: 158px;
+      left: 30px;
+      background-position: center;
+
+      @include respond-to(sm){
+       // right: 5px;
+      }
+      @include respond-to(md){
+        //right: -8px;
+
+      }
+    }
+  }
+  @include e('box-nome'){
+    background: #005290;
+    color: $white;
+    position: relative;
+    min-height: 50px;
+    display: block;
+    margin: -57px auto 0;
+    width: 250px;
+
+    @include respond-to(sm){
+      width: 220px;
+    }
+    @include respond-to(md){
+      width: 250px;
+
+    }
+
+    h3{
+      font-size: 22px;
+      font-weight: normal;
+      margin: 14px 0;
+      line-height: 1;
+      display: inline-block;
+      @include respond-to(sm){
+      margin: 15px 0;
+      font-size: 19px;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 32px;
+      top: 8px;
+      left: -8px;
+      background: url(../images/before-box-name.png)no-repeat;
+    }
+  }
+  @include e('box-informacoes'){
+    @include span(1);
+      margin: 30px 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    h4{
+      display: inline-block;
+      margin: 0;
+      line-height: 1;
+      margin-left: 10px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 16px;
+
+      @include respond-to(sm){
+        font-size: 13px;
+      }
+    }
+  }
+  @include e('box-redes'){
+    @include span(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+      margin: 0 10px;
+    }
+  }
+}
+#equipe{
+  margin-top: -80px;
+  @include respond-to(md){
+    margin-top: -200px;
+  }
+  .owl-controls{
+    margin: 20px 0;
+
+    @include respond-to(md){
+      margin: 45px 0 0;
+    }
+  }
+}
+.icone{
+  background: #005290;
+  border-radius: 20px;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 14px;
+
+}
+.icon-ux{
+  background: url(../images/icon-ux.png);
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+}
+.icon-pincel{
+  background: url(../images/icon-pencil.png);
+  height: 16px;
+  width: 12px;
+  display: inline-block;
+}
+.icon-dev{
+  background: url(../images/icon-dev.png);
+  height: 16px;
+  width: 22px;
+  display: inline-block;
+}
+.icon-dna{
+  background: url(../images/dna.png);
+  width: 87px;
+  height: 71px;
+  display: inline-block;
+  margin: 70px 0;
+}
+.icon-resultados{
+  background: url(../images/resultados.png);
+  width: 65px;
+  height: 55px;
+  display: inline-block;
+  margin:70px 0;
+}

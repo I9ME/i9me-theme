@@ -1,0 +1,318 @@
+.page-portfolio{
+	$self : &;
+	@extend %boxFull;
+	position: relative;
+	margin-bottom: 60px;
+	margin-top: -1px;
+	@include e('header'){
+    	@include span(1);
+    	text-align: center;
+
+    	@include respond-to(sm){
+    		margin: 60px 0 0;
+    	}
+    }
+
+	@include e('title'){
+		@include fonts(500,23);
+	 	margin: 0;
+	 	text-transform: uppercase;
+	 	letter-spacing: 3px;
+	 	float: left;
+	 	width: 100%;
+	 	@include respond-to(sm){
+	 		@include fonts(700,35);
+	 		margin-bottom: 21px;
+
+	 	}
+	}
+
+	@include e('subtitle'){
+	    @include span(1);
+		@include fonts(500,16);
+		color: $white;
+	    margin-top: 0;
+	    //margin-bottom: 25px;
+	    letter-spacing: 2px;
+	 	word-spacing: 3px; 	
+	 	a{
+	 		color: #8bc4f3;
+	 	}	 	
+	 	strong{
+	 		float: left;
+	 		background: #005193; 
+	 		padding: 10px 20px;
+	 		margin: 15px 0 0;
+	 		@include respond-to(sm){
+	 			margin: 0;
+	 		}
+	 	}
+	 	
+	}
+
+	@include e('blocos'){
+		@include span(1);
+	    position: relative;
+	    height: 700px;
+
+	    @include respond-to(sm){
+	    	height: 350px;
+	    }
+
+	    @include respond-to(md){
+	    	min-height: 350px;
+	    }
+
+	    @include respond-to(lg){
+	    	//height: 806px;
+	    }
+	}
+
+	@include e('bloco-left'){
+	 	@include span(1);
+	 		position: relative;
+	 		display: flex;
+    		align-items: center;
+
+	 		img{
+	 			width: 100%;
+			    height: 350px;
+			    object-fit: cover;
+
+			    @include respond-to(sm){
+			    	height: 350px;
+			    	object-fit: cover;
+			    }
+			    @include respond-to(md){
+			    	height: 350px;
+			    	object-fit: cover;
+			    }
+	 		}
+
+	 	@include respond-to(sm){
+	 		@include span(.5);
+	 	}
+
+	 	@include respond-to(md){
+	 		height: 350px;
+	 	}
+	}
+
+	@include e('bloco-right'){
+	 	@include span(1);
+	 		display: flex;
+    		align-items: center;
+	 		
+	 		img{
+	 			width: 100%;
+			  	 height: 350px;
+			    object-fit: cover;
+
+			    @include respond-to(sm){
+			    	height: 350px;
+			    	object-fit: cover;
+			    }
+
+			  	@include respond-to(md){
+			    	height: 350px;
+			    	object-fit: cover;
+			    }
+	 			
+	 		}
+
+	 	@include respond-to(sm){
+	 		@include span(.5);
+	 	}
+	 	
+	 	@include respond-to(md){
+	 		height: 350px;
+	 	}
+
+	}
+
+	@include e('info-left'){
+	 	@include span(1);
+	 	color: $white;
+	 	position: relative;
+	    left: 0;
+	    bottom: 595px;
+	    p{
+	 		float: left;
+	 		width: 100%;
+	 		margin: 15px 0 0;
+	 		@include respond-to(sm){
+	 			margin: 30px 0 0;
+	 		}
+	 	}
+
+
+	    @include respond-to(sm){
+	 		@include span(.5);
+	    	padding-right: 60px;
+	    	//bottom: 280px;
+	    	bottom: 310px;
+
+	    }
+	    @include respond-to(md){
+	    	bottom: 260px;
+
+	    }
+	 		
+	}
+	@include e('info-right'){
+	 	@include span(1);
+	 	color: $white;
+	 	float: right;
+	 	position: relative;
+	    bottom: 478px;
+	    right: 0;
+	 		
+	 	@include respond-to(sm){
+	 		@include span(.5);
+	    	padding-left: 60px;
+	    	bottom: 310px;
+	 	}
+	 	@include respond-to(md){
+	    	bottom: 260px;
+
+	    }
+	 	
+
+
+	 	p{
+	 		float: left;
+	 		width: 100%;
+	 		margin: 15px 0 0;
+	 		@include respond-to(sm){
+	 			margin: 30px 0 0;
+	 		}
+	 	}
+
+
+	}
+
+	@include e('websites'){
+	 	@include span(1);
+	}
+	@include e('mobile'){
+	 	@include span(1);
+
+	}
+	
+	@include e('seo'){
+	 	@include span(1);
+	 	background: #eee;
+	 	padding-bottom: 30px;
+	 	margin: -6px 0;
+	 	padding-top: 30px;
+	 	@include respond-to(md){
+	 		padding: 60px 0;
+
+	 	}
+
+	}
+	@include e('box-info'){
+	 	@include span(1);
+	 	   h2{
+	 	   	margin: 0;
+	 	   }
+	 	p{
+	 		margin-top: 30px;
+	 		display: inline-block;
+	 		text-align: center;
+	 		@include respond-to(md){
+	 			text-align: left;
+	 		}
+	 	}
+
+	 	@include respond-to(sm){
+	 		@include span(1);
+	 	}
+	 	@include respond-to(md){
+	 		@include span(.5);
+	 	    padding-right: 3%;
+	 	    text-align: center;
+	 	}
+	}
+	@include e('box-imagem'){
+	 	@include span(1);
+
+	 	img{
+	 		width: 100%;
+		    display: inline-block;
+		    max-width: 385px;
+	 	}
+
+	 	@include respond-to(sm){
+	 		@include span(1);
+	 		text-align: center;
+
+	 	}
+	 	@include respond-to(md){
+	 		@include span(.5);
+	 		margin-top: 60px;
+
+	 	}
+	}
+	// @include e('header'){
+	//  	@include span(1);
+
+	//  	text-align: center;
+
+	// }
+	@include e('header-title'){
+	 	@include span(1);
+		@include fonts(500,30);
+		letter-spacing: 5px;
+	 	text-transform: uppercase;
+	 	color: #005193;
+
+	 	&:after{
+	 		content: '';
+	 		width:80px;
+	 		border-bottom: 1px solid #bbb;
+	 		display: block;
+	 		margin: 0 auto;
+	 		padding-bottom: 15px;
+	 	}
+	}
+	@include e('header-subtitle'){
+	 	@include span(1);
+	 	letter-spacing: 2px;
+	 	margin-top: 0;
+	 	margin-bottom: 15px;
+
+	 	@include respond-to(sm){
+	 		margin: 30px 0;
+	 	}
+	 	
+	}
+	@include e('header-btn'){
+		@include span(1);
+		margin-bottom: 50px;
+		a{
+			@include fonts(500,16);
+			color: #005193;
+			border: 1px solid #005193;
+    		padding: 10px 30px;
+    		border-radius: 3px;
+    		margin: 20px 0;
+    		display: inline-block;
+		}
+	}
+	@include e('area-img'){
+		@include span(1);
+		margin-top: 15px;
+
+		@include respond-to(sm){
+			margin: 0;
+		}
+		img{
+			width: 100%;
+		}
+	}
+	@include e('outros-projetos'){
+		@include span(1);
+	}
+}
+

@@ -1,0 +1,41 @@
+.breadcrumb{
+	$self : &;
+	@extend %boxFull;
+	@include span(1);
+	background: $white;
+	border-bottom: 1px solid #eee;
+
+	#breadcrumbs{
+		display: none;
+		@include respond-to(sm){
+			margin: 20px 0;
+			display: block;
+		}
+		@include respond-to(md){
+			margin: 25px 0;     
+			
+		}
+	a:nth-of-type(1){
+		background: url(../images/home.png)no-repeat;
+	    background-position: left;
+		padding-left: 29px;
+	}
+	a:nth-of-type(2){
+		background: none;
+	}
+	a,span{
+		color: #0b2b4c;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 500;
+		margin-right: 15px;
+		font-size: 13px;
+
+	}
+	.breadcrumb_last{
+		color: #888;
+		margin-left: 15px;
+	}
+
+	}
+}

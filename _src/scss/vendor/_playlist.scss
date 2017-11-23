@@ -1,0 +1,197 @@
+#audio-players {
+    @include view(md,lg);
+    margin-top: rem(10);
+
+    @include respond-to(lg){
+        margin-top: rem(20);
+        min-height: rem(435);
+    }
+}
+
+.audio-musicas {
+
+    height: rem(315);
+    overflow: auto;
+
+    @include respond-to(lg){
+        height: rem(425);
+    }
+
+    @include m('interna'){
+
+        height: rem(400);
+
+        @include respond-to(lg){
+            height: rem(510);
+        }
+    }
+
+
+}
+
+.audioplayer {
+    width: 98%;
+    height: rem(60);
+    margin-bottom: rem(25);
+}
+
+.audioplayer:hover .play {
+    opacity: 1;
+}
+
+.playlist {
+
+    @include e('musica'){
+        color: lighten($cor-secundaria, 10%);
+        font-size: rem(16);
+        font-weight: bold;
+    }
+
+    @include e('autor'){
+        color: lighten($cor-secundaria, 20%);
+        font-size: rem(15);
+    }
+
+    @include e('btn'){
+        @include col(.15);
+        position: relative;
+    }
+
+    @include e('song'){
+        @include col(.85);
+        // float: right;
+        // width: 86%;
+        // margin-left: 2%;
+    }
+
+    @include e('info'){
+        float: left;
+        width: 85%;
+        margin-top: rem(10);
+    }
+
+    @include e('tempo'){
+        float: right;
+        padding: rem(5);
+        width: 10%;
+        text-align: center;
+        font-size: rem(15);
+        display: none;
+        margin-top: rem(10);
+    }
+}
+
+.playbutton {
+    height: 30px;
+    // width: 12%;
+    border: none;
+    float: left;
+    outline: none;
+    background-color: $cor-secundaria;
+
+    // -webkit-font-smoothing: antialiased;
+    // background-color: #222;
+    // border: none;
+    // display: inline-block;
+    // user-select: none;
+    // letter-spacing: 0.1em;
+    // color: white;
+    // transition: background-color 0.1s ease-out;
+    // position: relative;
+    // z-index: 0;
+
+    @include respond-to(sm){
+        height: 40px;
+    }
+
+    @include respond-to(md){
+        height: 60px;
+    }
+
+    &.play,
+    &.pause {
+        @extend .fa;
+        color: $white;
+        font-size: rem(12);
+
+        @include respond-to(md) {
+            font-size: rem(20);
+        }
+
+        &:before {
+            @extend %centerPositionAll;
+        }
+    }
+
+    &.play {
+        opacity: .3;
+        @extend .fa-play;
+    }
+
+    &.pause {
+        @extend .fa-pause;
+        background-color: $cor-primaria;
+    }
+
+    &:hover {
+        background-color: none;
+        color: #fff;
+    }
+
+    &:focus {
+        outline: none;
+        color: #fff;
+    }
+
+    // .button__bg {
+    //     transform: translateZ(0);
+    //     outline: 90px solid transparent !important;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     z-index: -1;
+    //     background: $cor-secundaria;
+    // }
+
+    // &.pause .button__bg {
+    //     background: $cor-primaria;
+    // }
+
+    // &.anima .button__bg {
+    //     transition: background 0.1s ease-out;
+    //     -webkit-filter: url("#filter-music");
+    //     filter: url("../#filter-music");
+    // }
+}
+
+
+.timeline {
+    width: 100%;
+    height: rem(4);
+    float: left;
+    margin-top: 0;
+    background: $cor-secundaria;
+    cursor: pointer;
+}
+
+.playhead {
+    width: 0;
+    height: rem(4);
+    margin-top: 0;
+    background: #d6ae0d;
+    cursor: pointer;
+}
+
+.svg-filters {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.safari .button, .safari .button__bg {
+    -webkit-filter: none !important;
+    filter: none !important;
+}

@@ -1,0 +1,113 @@
+//==========================================================================
+// RESET / RESET GLOBAL DEFAULT
+//==========================================================================
+// Reset personalizado
+
+*,
+*:after,
+*::before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+html,
+body {
+	font-size: 16px;
+	min-width: 240px;
+}
+
+body {
+	@include fonts(400, 18);
+}
+
+// Ul
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+// Link
+a {text-decoration: none;}
+
+//H1, H2, H3
+%headers {
+	font:{
+		family: $font-header;
+		weight: 700;
+	}
+}
+
+@each $header, $size in (h1: 40, h2: 35, h3: 27) {
+  #{$header} {
+  	@extend %headers;
+    font-size: rem($size);
+  }
+}
+
+
+
+.img-full{
+	@extend %imgProp;
+}
+
+.img-resp {
+	max-width: 100%;
+	height: auto;
+}
+
+.img-radius{
+	border-radius: $border-radius;
+}
+
+.img-circle{
+	@extend %imgProp;
+	border-radius: $border-radius;
+}
+
+.error{
+	border: 1px solid $erro $i;
+}
+
+label.error{
+	display: none $i;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s $i;
+    -webkit-text-fill-color: $black $i;
+    -webkit-box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.icon-center {
+	position: absolute;
+	top: -80px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 99;
+}
+
+.section {
+	@extend %boxFull;
+	position: relative;
+}
+
+.col-half {
+	@extend %boxFull;
+	
+	@include respond-to(md){
+		@include col(1/2, $gutter: 5);
+	}
+}
+

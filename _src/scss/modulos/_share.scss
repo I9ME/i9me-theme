@@ -1,0 +1,57 @@
+.wrap-share {
+    @extend %boxFull;
+    text-align: center;
+}
+
+.share {
+
+    margin-top: 0;
+
+    @include e('item') {
+
+        display: inline-block;
+        @include respond-to(sm){
+
+        }
+
+        margin: rem(5);
+        border: 0;
+        border-radius: rem(5);
+        font-size: rem(14);
+
+        @include m('facebook'){background: #3b5998;}
+        @include m('twitter'){background: #55acee;}
+        @include m('google'){background: #dd4b39;}
+        @include m('whatsapp'){
+            font-size: rem(16);
+            background: #4dc247;
+            display: inline-block;
+            @include respond-to(sm){
+                display: none;
+            }
+        }
+
+        span {
+            display: none;
+            @include respond-to(sm){
+                display: inline-block;
+            }
+        }
+
+    }
+
+    @include e('icone') {
+        display: block;
+        @include respond-to(sm){
+            display: inline-block;
+            margin-right: rem(10);
+        }
+    }
+
+    @include e('link') {
+        color: $white;
+        display: block;
+        padding: rem(10) rem(20);
+    }
+
+}

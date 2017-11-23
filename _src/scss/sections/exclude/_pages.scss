@@ -1,0 +1,113 @@
+.pages {
+    $self: &;
+    @extend %boxFull;
+    padding: rem(40) 0;
+
+
+    @include e('header'){
+        @extend %boxFull;
+    }
+
+    @include e('headline'){
+        @include titles(800, 35,$cor-titulos);
+        @include borderline($cor-primaria,80px,5px);
+    }
+
+    @include e('content'){
+        @extend %boxFull;
+        @include fonts(300, 18);
+        line-height: rem(25);
+    }
+
+    @include e('thumb'){
+        @extend %boxFull;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    @include e('titulo'){
+        @include titles(800, 30, lighten($cor-titulos, 15%));
+        @extend %boxFull;
+
+        @include respond-to(sm){
+            @include titles(800, 45, lighten($cor-titulos, 15%));
+            max-width: 90%;
+        }
+
+        @include respond-to(md){
+            max-width: 70%;
+        }
+    }
+
+    @include e('row'){
+        @extend %boxFull;
+
+        @include m('button'){
+            margin: rem(20) 0;
+            text-align: center;
+        }
+    }
+
+    @include e('btn'){
+        @extend .btn;
+        background: $cor-primaria $i;
+        color: $white $i;
+        display: inline-block;
+        text-align: center;
+
+        &:hover {
+            background: darken($cor-primaria,20%) $i;
+        }
+    }
+
+    @include e('coluna'){
+        @include col(1);
+        color: lighten($cor-titulos, 10%);
+        text-align: justify;
+        @include respond-to(sm){
+            @include col(.5, $cycle: 2);
+            text-align: justify;
+        }
+
+        @include m('destaque'){
+            @include titles(500, 40, $cor-primaria);
+            @include borderline($cor-primaria,100%,5px, 0, 50%, true);
+            text-align: center;
+            padding: 57px;
+        }
+    }
+
+    @include e('image'){
+        @extend %loadPrimaria;
+
+        img {
+            border-radius: rem(8);
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    //SOBRE
+    @include m('sobre'){
+        margin-bottom: rem(80);
+    }
+
+    //SISTEMA
+    @include m('sistema'){
+
+        @include e('headline', $self){
+            @include titles(800, 35, $cor-titulos);
+            @include borderline($cor-primaria, 80px, 5px, 0, 50%, true);
+            text-align: center;
+        }
+
+        @include e('thumb', $self){
+            margin: rem(25) 0;
+        }
+    }
+
+}

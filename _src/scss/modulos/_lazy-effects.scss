@@ -1,0 +1,41 @@
+.b-lazy {
+    opacity:0;
+
+    &.zoom {
+       transform: scale(0);
+       transition: all .5s;
+    }
+
+    &.b-loaded.fade {
+        // opacity: 1;
+        @extend .fadeIn;
+        animation-duration: .5s;
+        animation-delay: 1.5s;
+        animation-fill-mode: both;
+    }
+
+    &.zoom.b-loaded {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &.fadeinleft.b-loaded {
+        @extend .fadeInLeft;
+        animation-duration: .5s;
+        animation-delay: .8s;
+        animation-fill-mode: both;
+        opacity: 1;
+    }
+
+    &.fadeinup.b-loaded {
+        @extend .fadeInUp;
+        animation-duration: .5s;
+        animation-delay: .8s;
+        animation-fill-mode: both;
+        opacity: 1;
+    }
+}
+
+img.b-loaded {
+    @extend .img-full;
+}

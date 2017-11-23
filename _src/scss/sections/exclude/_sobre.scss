@@ -1,0 +1,383 @@
+%sections {
+    @extend %boxFull;
+    color: lighten($cor-titulos, 10%);
+    font-size: rem(18);
+    font-weight: 300;
+    line-height: 1.5;
+    padding: rem(50) 0;
+}
+
+.sobre {
+    $self: &;
+    @extend %sections;
+    position: relative;
+
+    @include e('desc'){
+        font-size: rem(16);
+        text-align: justify;
+
+        @include respond-to(sm){
+            font-size: rem(18);
+        }
+    }
+
+    @include m('home'){
+        @extend %boxFull;
+        padding-top: rem(80);
+
+        .container {
+            @include center(80%);
+        }
+
+        @include e('thumb', $self){
+            @include col(1);
+            @include respond-to(sm){
+                @include col(.45);
+            }
+
+            img {
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @include e('coluna', $self){
+            @include col(1);
+            @include respond-to(sm){
+                @include col(.55);
+            }
+        }
+
+        @include e('titulo', $self){
+             @extend %titPrincipal;
+            position: relative;
+            padding: rem(25) 0 0;
+
+            b {
+                color: $cor-primaria;
+            }
+        }
+
+        @include e('desc', $self){
+            color: $cor-terciaria;
+            font-size: rem(18);
+            line-height: 20px;
+        }
+
+        @include e('btn', $self){
+            @extend %boxFull;
+            margin: rem(10) 0 0;
+
+            a {
+                color: $white;
+                background: $cor-primaria;
+                max-width: 155px;
+
+                &:hover {
+                    color: $white;
+                    background: $cor-primaria;
+                }
+            }
+        }
+    }
+}
+
+//INFRA
+.infra {
+    @extend %sections;
+    background: {
+        image: url(../images/bg-infra.jpg);
+        repeat: no-repeat;
+        size: cover;
+    }
+    color: $white;
+    padding-bottom: 0;
+
+    @include e('desc'){
+        @extend %boxFull;
+        text-align: center;
+        margin-bottom: rem(35);
+    }
+
+    @include e('areas'){
+        @include col(1);
+        text-align: center;
+        @include respond-to(sm){
+            @include col(1/2);
+            text-align: left;
+        }
+    }
+
+    @include e('thumb'){
+        @include col(1);
+        text-align: center;
+
+        @include respond-to(sm){
+            @include col(.15);
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    @include e('info'){
+        @include col(1);
+        @include respond-to(sm){
+            @include col(.85);
+        }
+    }
+
+    @include e('subareas'){
+        @extend %boxFull;
+        background: rgba($black, .5);
+        margin-top: rem(30);
+        padding: rem(45) 0;
+    }
+}
+
+.subareas {
+    @include e('lista'){
+        @extend %boxFull;
+        margin-top: rem(30);
+    }
+
+    @include e('item'){
+        @include col(1);
+        margin-bottom: rem(20);
+
+        @include respond-to(sm){
+            @include col(1/2, $cycle: 2);
+        }
+
+        @include respond-to(md){
+            @include col(1/3, $cycle: 3);
+        }
+    }
+
+    @include e('thumb'){
+        @include col(1);
+        @include respond-to(sm){
+            @include col(.25);
+        }
+
+        text-align: center;
+        margin-bottom: rem(12);
+    }
+
+    @include e('icone'){
+        @include size(60px);
+        background: $cor-secundaria;
+        border-radius: 50%;
+        margin: rem(0) auto;
+        position: relative;
+
+        > div {
+            @extend %centerPositionAll;
+
+        }
+    }
+
+    @include e('melao_mamao'){@extend .icon-sprite-infra-melao;}
+    @include e('frutos_quentes'){@extend .icon-sprite-infra-banana;}
+    @include e('parque_frio'){@extend .icon-sprite-infra-melancia;}
+
+    @include e('info'){
+        @include col(1);
+        text-align: center;
+        @include fonts(300, 15);
+
+        @include respond-to(sm){
+            @include col(.75);
+            text-align: left;
+        }
+
+        ul li {
+            display: inline-block;
+            position: relative;
+            padding: rem(10) 0 rem(10) rem(15);
+            width: 100%;
+            border-bottom: 1px solid $gray;
+
+            @include respond-to(sm){
+                border-bottom: 0;
+                padding: 0 0 0 rem(15);
+
+                &:before {
+                    @include size(15px);
+                    content: ">";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    @include e('titulo'){
+        @extend %boxFull;
+        @include fonts(800, 16);
+        margin-bottom: rem(20);
+        color: $cor-secundaria;
+    }
+}
+
+//PARCERIAS
+.parcerias {
+    @extend %sections;
+
+    @include e('desc'){
+        @include col(1);
+        @include respond-to(sm){
+            @include col(.6);
+        }
+
+        b, strong {
+            color: $cor-secundaria;
+        }
+    }
+
+    @include e('thumb'){
+        @include col(1);
+        margin-top: rem(20);
+
+        @include respond-to(sm){
+            @include col(.4);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+//DESEMPENHO
+.desempenho {
+    @extend %sections;
+    background: {
+        image: url(../images/bg-desempenho.jpg);
+        repeat: no-repeat;
+        size: cover;
+    }
+    color: $white;
+    text-align: center;
+
+    @include e('btn'){
+        @extend %boxFull;
+        margin: rem(40) 0;
+        text-align: center;
+
+        a {
+            background: $cor-primaria;
+            color: $white;
+            font-size: rem(12);
+            max-width: 280px;
+
+            @include respond-to(sm){
+                max-width: 380px;
+            }
+
+            &:hover {
+                @extend %animabg;
+                background: $white;
+                color: $cor-primaria;
+            }
+        }
+    }
+}
+
+//LOCAL
+.local {
+    @extend %sections;
+
+    @include e('subtitulo'){
+        @extend %boxFull;
+        @include fonts(300, 26);
+        margin-bottom: rem(20);
+        text-align: center;
+    }
+
+    @include e('desc'){
+        @extend %boxFull;
+        text-align: justify;
+    }
+}
+
+//MAPA
+.mapa {
+    @extend %sections;
+    background: $gray;
+    position: relative;
+    padding: 0;
+
+    &:hover {
+
+        .mapa__popup {
+            // display: none;
+            @extend .animated;
+            @extend .fadeOutLeft;
+        }
+    }
+
+    @include e('popup'){
+        @extend .animated;
+        @extend .fadeInLeft;
+        background: $white;
+        border-radius: rem(5);
+        box-shadow: 0px 0px 20px rgba($black,.1);
+        padding: rem(40);
+        position: absolute;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 320px;
+        z-index: 99;
+        height: 350px;
+    }
+
+    @include e('titulo'){
+        @include fonts(800, 28);
+        color: $cor-primaria;
+        padding: rem(30) 0;
+        position: relative;
+        line-height: 1;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:before {
+            @extend .icon-sprite-map-marker;
+            top: 0;
+        }
+
+        &:after {
+            background: $cor-primaria;
+            bottom: 0;
+            height: 2px;
+            width: 48%;
+        }
+    }
+
+    @include e('info'){
+        line-height: 1.2;
+    }
+
+    #bodyContent {line-height: 1.35;}
+    #bodyContent h3 {color: #4bc6b1;margin: 8px 0;min-width: 150px;white-space: pre-wrap; font-size: 20px; text-transform: uppercase;}
+    #bodyContent > p > a {float: left;margin-top: 10px;}
+    #bodyContent b {margin-bottom: 5px;}
+    #bodyContent a, #bodyContent a:hover {background: #f25657;color: #fff;padding: 5px; text-decoration: none;}
+
+    #map {height: 500px;width: 100%; float: left;}
+    img {width: auto; height: auto;max-width: none;}
+}

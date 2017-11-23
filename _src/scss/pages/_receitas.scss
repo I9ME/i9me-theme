@@ -1,0 +1,67 @@
+.pages--receitas {
+    .painel-image {
+        margin: 0;
+    }
+    
+    .headerTitle {
+        margin-top: rem(50);
+        margin-bottom: 0;
+    }
+
+    .receita__infos {
+        padding-top: rem(45);
+    }
+
+    .receita__tit {
+        font-size: rem(26);
+        font-family: $font-default;
+        color: #1677bd;
+        text-transform: uppercase;
+
+        @include respond-to(sm){
+            font-size: rem(26);
+            width: 50%;
+        }
+
+        @include respond-to(md){            
+            width: 75%;
+        }
+
+        @include respond-to(md){
+            font-size: rem(33);
+        }
+
+        a {
+            color: #1677bd;
+        }
+    }
+
+    .receita__tag {
+        top: -35px;
+    }
+
+    .receita__desc {
+        font-size: rem(16);
+
+        strong {
+            color: #1677bd; 
+        }
+    }
+}
+
+.pages--receitas-int {
+
+    .receita__tag {
+        z-index: 99;
+    }
+
+    .receita__thumbs{
+        img {
+            height: 400px;            
+        }
+
+        &:after {
+            display: none;
+        }
+    } 
+}

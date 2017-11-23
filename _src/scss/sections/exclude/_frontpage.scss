@@ -1,0 +1,48 @@
+.ambiental {
+    @extend %boxFull;
+    background: {
+        image: url(../images/bg-ambiental.jpg);
+        size: cover;
+        position: center;
+    }
+    color: $white;
+    min-height: 500px;
+    padding: rem(100) 0 0;
+
+    @include e('bloco'){
+        @include col(1);
+
+        @include respond-to(sm){
+            @include col(.45)
+        }
+    }
+
+    @include e('tag'){
+        font-size: rem(22);
+        margin-bottom: rem(10);
+        text-transform: uppercase;
+    }
+
+    @include e('titulo'){
+        @include fonts(800, 45);
+        margin: rem(20) 0;
+        line-height: 1;
+    }
+
+    @include e('desc'){
+        margin-bottom: rem(25);
+    }
+
+    @include e('btn'){
+        @extend %boxFull;
+        margin: rem(10) 0 0;
+
+        a {
+            background: $white;
+            &:hover {
+                color: $cor-titulos;
+                background: $white;
+            }
+        }
+    }
+}

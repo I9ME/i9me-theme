@@ -1,0 +1,181 @@
+ .footer {
+     @extend %boxFull;
+         position: relative;
+         z-index: 999999999;
+
+
+     @include e('layertop'){
+         background-color: $blue5;
+         padding: 0;
+
+         @include respond-to(sm){
+             padding: 60px 0;
+         }
+
+
+     }
+     @include e('title'){
+         @include fonts(700,18);
+             border-bottom: 1px solid $blue6;
+             color: $white;
+             display: block;
+             padding-bottom: 25px;
+
+     }
+     @include e('bloco'){
+         @include span(1);
+         li{
+             padding-bottom: 10px;
+
+             a{
+                 @include fonts(500,14);
+                 color: $blue8;
+                
+                 &:hover{
+                     color: $blue7;
+                     text-decoration: underline;
+                 }
+             }
+         }
+       
+
+         @include respond-to(md){
+             @include span(.20);
+             margin-bottom: 0;
+             margin-top: 0;
+             margin-right: 4%$i;
+             padding-right: 45px;
+                //padding-right: 30px;
+         }
+
+         @include m('iframe'){
+
+            iframe{
+                width: 100%;
+                height: 224px;
+                margin: 10px 0;
+            }
+            @include respond-to(md){
+                @include span(.28);
+                margin-right: 0$i;
+                padding-right: 0;
+                margin: 10px 0;
+            }
+         }
+     }
+
+     @include e('fones'){
+
+         a{  
+              color: $blue8;
+                
+                 &:hover{
+                     color: $blue7;
+                     text-decoration: underline;
+                     transition: all .6s;
+                 }
+                 @include respond-to(md){
+                     display: none;
+                 }
+         }
+        
+             @include m('d'){
+                 display: none;
+                 a{
+                      color: $blue7;
+                
+                     // &:hover{
+                     //     color: $blue8;
+                     //     text-decoration: underline;
+                     // }
+                 }
+             }
+             @include respond-to(md){
+                 @include m('d'){
+                     display: block;
+                 div{
+                      color: $blue8;
+                
+                     // &:hover{
+                     //     color: $blue8;
+                     //     text-decoration: underline;
+                     // }
+                 }
+                 }
+             }
+     }
+
+     @include e('iframe'){
+         @include span(1);
+             margin-bottom: 20px;
+
+         @include respond-to(sm){
+             @include span(.37);
+                 display: flex;
+                 margin: 56px 0 0;
+         }
+
+         iframe{
+            height: 223px;
+            width: 100%;
+            @include respond-to(md){
+                margin-left: 21%;
+            }
+         }
+     }
+
+     @include e('layerbottom'){
+         background-color: #0b293f;
+         min-height: 145px;
+         padding: 53px 0px;
+
+     }
+     @include e('brand'){
+         @include span(1);
+             text-align: center;
+             color: #fff;
+
+         img{
+             vertical-align: middle;
+         }
+
+         span{
+             letter-spacing: 4px;
+             margin-left: 10px;
+             vertical-align: middle;
+         }
+
+        @include respond-to(sm){
+            @include span(.35);
+            
+        }
+        @include respond-to(md){
+             @include span(.20);
+             margin: 7px 0;
+         }
+     }
+     @include e('copyright'){
+         @include span(1);
+             margin: 25px 0 0;
+             color: #fff;
+             text-align: center;
+         span{
+             vertical-align: middle;
+         }
+         strong{
+             color: $blue8;
+         }
+
+        @include respond-to(sm){
+            @include span(.70);
+                
+                 text-align: right;
+                 margin: 20px 0px;
+                 letter-spacing: 2px;
+                 @include fonts(400,13);
+         }
+     }
+
+
+      
+ }

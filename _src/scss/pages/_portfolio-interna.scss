@@ -1,0 +1,9 @@
+.portfolio-interna{
+	margin: 20px 0;
+	@include respond-to(sm){
+		margin: 90px 0 90px;
+	}
+	@include e('vermais'){
+		margin: 60px 0;
+	}
+}

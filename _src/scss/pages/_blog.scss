@@ -1,0 +1,226 @@
+.page-blog{
+	$self : &;
+	@extend %boxFull;
+	position: relative;
+}
+
+.blog{
+	$self : &;
+	@extend %boxFull;
+
+
+	@include e('header'){
+		@include span(1);
+		text-align: center;
+		margin: 15px 0;
+		@include respond-to(sm){
+			margin: 30px 0;
+		}
+	}
+	@include e('header-title'){
+		@include span(1);
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 25px;
+		@include respond-to(md){
+			margin: 30px 0;
+		}
+	}
+	@include e('conteudo'){
+		img{
+			@include span(1);
+			object-fit: cover;
+			@include respond-to(sm){
+				object-fit: none;
+			}
+		}
+	}
+	@include e('news'){
+		@include span(1);
+		
+		margin: 0;
+		
+		@include respond-to(md){
+			@include span(.67);
+			// padding-left: 5%;
+   //  		padding-right: 5%;
+    		margin: 0;
+		}
+		li{
+			border: 1px solid #DDD;
+			margin-bottom: 30px;
+			position: relative;
+			@include respond-to(sm){
+				position: inherit;
+			}
+			td{
+				padding: 13px;
+				text-align: justify;
+				@include respond-to(sm){
+					padding: 22px;
+				}
+			}
+		}
+
+		thead{
+			border-bottom: 1px solid #DDD;
+		}
+		.date{
+			border-right: 1px solid #ddd;
+		    text-align: center;
+		    font-size: 12px;
+		    position: absolute;
+		    display: block;
+		    top: 0;
+		    padding: 19px;
+		    left: 0;
+		    width: 50%;
+		    border: none;
+    		@include respond-to(sm){
+    			width: 70px;
+    			padding: 22px;
+    			font-size: 15px;
+    			position: initial;
+    			display: inline-block;
+				border-right: 1px solid #ddd;
+    		}
+		}
+		.titlePost{
+			padding: 10px;
+			width: 100%;
+			margin-top: 48px;
+			position: relative;
+			display: block;
+			border-top: 1px solid #DDD;
+			@include respond-to(sm){
+				padding: 15px;
+				margin: 0;
+				display: table-cell;
+				border: 0;
+			}
+			h5{
+			    position: relative;
+			    display: block;
+			    margin: 0;
+			    padding: 0;
+			    line-height: 120%;
+			    font-size: 18px;
+			    @include respond-to(sm){
+			    	font-size: 26px;
+			    }
+			}
+			a{
+				color: #337ab7;
+				text-transform: uppercase;
+			}
+		}
+		.comments{
+			border-left: 1px solid #ddd;
+		    text-align: center;
+		    position: absolute;
+		    display: block;
+		    padding: 9px;
+		    top: 0;
+		    right: 0;
+		    width: 50%;
+    		@include respond-to(sm){
+    			border-left: 1px solid #ddd;
+    			width: 70px;
+				padding: 17px;
+				position: initial;
+				display: inline-block;
+
+    		}
+    		span{
+    			position: relative;
+			    display: inline-block;
+			    width: 28px;
+			    height: 28px;
+			    background: url(../images/date.png) no-repeat;
+			    color: #FFF;
+			    font-size: 12px;
+			    text-align: center;
+			    line-height: 23px;
+    		}
+		}
+	}
+	@include e('sidebar'){
+		@include span(1);
+		    border: 1px solid #ddd;
+
+		@include respond-to(md){
+			@include span(.3);
+			//box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.12);
+		    margin-left: 3%;
+		}
+
+		header{
+			margin: 0 0 20px 0;
+    		padding: 0 0 10px 0;
+    		border-bottom: 1px solid #CCC;
+		}
+		h4{
+			font-size: 25px;
+			color: #555;
+			margin: 0;
+    		padding: 0;
+		}
+		.search,.category,.archive,.comments{
+			padding: 30px;
+		}
+		.search form{
+			position: relative;
+		    display: block;
+		    border: 1px solid #CCC;
+		    border-radius: 0 $i;
+		    background: none $i;
+		}
+		.search form .labelForm{
+			position: absolute;
+		    display: block;
+		    font-size: 12px;
+		    font-weight: normal;
+		    top: 2px;
+		    left: 4px;
+		    z-index: 1;
+		    border: none $i;
+		    border-radius: 0 $i;
+		    background: none $i;
+		}
+		.search form input.keyword{
+			position: relative;
+		    display: block;
+		    width: calc(100% - 50px);
+		    height: 48px;
+		    border: none $i;
+		    padding: 1px 5px 0 5px $i;
+		    font-size: 14px;
+		    font-weight: bold;
+		    color: #555;
+		    border-radius: 0 $i;
+		    background: none $i;
+		}
+		.search form input.submit{
+			position: absolute;
+		    display: block;
+		    top: -1px;
+		    right: -1px;
+		    z-index: 1;
+		    width: 50px;
+		    height: 50px;
+		    margin: 0;
+		    padding: 0;
+		    background: url(../images/icon-search.png) no-repeat #CCC center center;
+		    border: none$i;
+		    border-radius: 0 $i;
+		    cursor: pointer;
+		}
+		.category,.archive,.comments{
+			a{
+				color: #337ab7;
+				@include fonts(500,20);
+			}
+		}
+		
+	}
+}

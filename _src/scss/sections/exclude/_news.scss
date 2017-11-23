@@ -1,0 +1,123 @@
+//Blog
+.news {
+    $self: &;
+    @extend %boxFull;
+    padding: rem(60) 0;
+
+    @include e('bloco'){
+        @include col(1);
+        background: $cor-secundaria;
+        padding-bottom: rem(30);
+        margin-bottom: rem(30);
+
+        @include respond-to(sm){
+            @include col(1/3, $cycle: 3);
+        }
+    }
+
+    @include e('thumb'){
+        @extend %boxFull;
+        img {
+            @extend %imgProp;
+        }
+    }
+
+    @include e('content'){
+        @extend %boxFull;
+        padding: 0 rem(15);
+        margin-bottom: rem(15);
+    }
+
+    @include e('data'){
+        @include fonts(300, 13);
+        color: $white;
+        margin-top: rem(8);
+        text-transform: uppercase;
+
+        i {
+            color: $white;
+            margin-right: rem(5);
+        }
+    }
+
+    @include e('titulo'){
+        @extend %boxFull;
+        @include fonts(600, 25);
+        color: $white;
+        margin: rem(10) 0;
+        line-height: 1;
+
+        a {
+            display: block;
+            color: inherit;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    @include e('texto'){
+        @extend %boxFull;
+        @include fonts(300, 16);
+        color: $white;
+    }
+
+    @include e('btn'){
+        @extend %boxFull;
+        margin: rem(10) rem(15) 0;
+
+        a {
+            background: $white;
+            max-width: 155px;
+
+            &:hover {
+                color: $cor-titulos;
+                background: $white;
+            }
+        }
+    }
+
+    //RELACIONADOS
+    @include m('relacionados'){
+        @extend %boxFull;
+        background: $gray;
+        padding: rem(60) 0;
+    }
+
+    @include m('single'){
+        padding: rem(40) 0;
+
+        @include e('comentarios', $self){
+            @extend %boxFull;
+            // @include center(90%);
+        }
+
+        @include e('thumb', $self){
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+
+            img {
+                position: absolute;
+                object-fit: cover;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        @include e('texto', $self){
+            @extend %boxFull;
+            @include fonts(400, 18);
+            color: lighten($cor-titulos, 10%);
+            line-height: 1.2;
+            margin-bottom: rem(15);
+        }
+
+        @include e('data', $self){
+            color: $cor-titulos;
+            font-weight: 600;
+        }
+    }
+}

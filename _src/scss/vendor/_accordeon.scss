@@ -1,0 +1,79 @@
+//==========================================================================
+// ACCORDION
+//==========================================================================
+
+/*----- Accordion -----*/
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.accordion {
+    // overflow: hidden;
+    @extend %boxFull;
+    color: $acc-color;
+    background: $white;
+}
+
+/*----- Section Titles -----*/
+.accordion-title {
+    @include fonts(400, 19, $font-default);
+    color: scale_color($acc-head-text, 20%);
+    position: relative;
+    background: $acc-head;
+    border-bottom: rem(10) solid #fff;
+    width: 100%;
+    padding: rem(15);
+    display: inline-block;
+    transition: all linear 0.15s;
+    /* Type */
+    text:{
+        //shadow: 0px 0px 1px lighten($acc-color, .5%);
+    	decoration: none;
+    }
+
+    &:before{
+        position: absolute;
+        content: "";
+        display: inline-block;
+        right: 20px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 8px;
+        border-color: transparent transparent transparent $acc-head-text;
+        display: none;
+
+        @include respond-to(sm){
+            display: block;
+        }
+    }
+
+	&.active,
+	&.active:hover {
+        border-bottom:none;
+		&:before{
+            @include prefix(transform, rotate(90deg) );
+        }
+	}
+
+	&:hover {
+		color: scale_color($acc-head-text, 5%);
+		background: $acc-hvr;
+	}
+}
+
+.accordion-section:last-child .accordion-title {
+    // border-bottom:none;
+}
+
+/*----- Section Content -----*/
+.accordion-content {
+    font-size: rem(16);
+    padding: rem(10) rem(15);
+    margin-bottom: rem(10);
+    // border-bottom: rem(8) solid #fff;
+    display: none;
+    background: $acc-bg;
+}

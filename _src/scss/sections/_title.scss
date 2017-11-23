@@ -1,0 +1,586 @@
+// //TITLES DE CADA SECTION
+.header-section {
+ 	$self : &;
+ 	@extend %boxFull;
+ 		position: relative;
+ 	    z-index: 999999;
+ 	    text-align: center;
+ 	    min-height: 180px;
+
+ 	    @include respond-to(sm){
+ 	    	min-height: 200px;
+ 	    }
+	
+ 	@include m('area-design'){
+    	background: hsla(0, 0%, 100%, 0.49);
+    	display: none;
+    	@include respond-to(md){
+ 			display: flex;
+    		align-items: flex-start;
+    		background: none;
+    	}
+
+
+ 	}
+ 	@include m('area-web'){
+    	display: none;
+    	//top: -715px;
+    	background: none;
+    	@include respond-to(md){
+    		align-items: flex-start;
+ 			display: flex;
+    		//top: -700px;
+    	}
+    	@include respond-to(md){
+    		//top: 0px;
+    	}
+
+ 	}
+ 	@include m('area-clientes'){
+ 		 min-height: 65px;
+
+ 	    @include respond-to(sm){
+ 	    	min-height: 120px;
+ 	    }
+ 	}
+ 	@include m('area-atendimento'){
+ 		
+    	//top: -715px;
+    	display: none;
+    	@include respond-to(sm){
+    		display: flex;
+    		align-items: flex-start;
+    		background: none;
+    	}
+    	@include respond-to(md){
+    		//top: 0px;
+    	}
+
+ 	}
+
+
+ 	@include e('box'){
+ 		@include span(1);
+ 		display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    margin-bottom: 30px;
+	    @include m('before-blue'){
+	    	position: relative;
+	    	top: 0;
+	    }
+	    @include m('resultados'){
+	    	@include span(.30);
+	    	    min-height: 181px;
+
+	    	@include respond-to(sm){
+	    	    min-height: 211px;
+	    	}
+	    }
+	    @include m('design'){
+	    	@include span(.20);
+	    	    // min-height: 181px;
+				margin: 0;
+	    	@include respond-to(sm){
+	    	    // min-height: 211px;
+	    	    @include span(.26);
+	    	}
+	    }
+
+	    @include m('dna'){
+	    	@include span(.25);
+	    	    min-height: 181px;
+
+	    	@include respond-to(sm){
+	    	    min-height: 111px;
+	    	}
+	    }
+
+	    @include m('sobre-nos'){
+	    	display: flex;
+	    	flex-direction: column;
+	    	align-items: center;
+
+	    	@include respond-to(sm){
+    			align-items: center;
+    		}
+    		@include respond-to(md){
+	    		align-items: left;
+	    		padding-right: 21%;
+    		}
+	    }
+
+	     @include m('atendimento'){
+	    	@include span(.75);
+	    	    min-height: 181px;
+
+	    	@include respond-to(sm){
+	    	    min-height: 211px;
+	    	    justify-content: flex-end;
+	    	}
+	    }
+ 	}
+
+ 	@include e('title'){
+ 		@extend %boxFull;
+			@include fonts(700, 30);
+			margin: 0;
+			color: #005193;
+			position: relative;
+			//line-height: 85px;
+			line-height: 70px$i;
+			max-width: 242px;
+			text-transform: uppercase;
+
+ 		    &:before{
+ 		    	border-style: solid;
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    width: 100%;
+ 		    	border-width: 5px 5px 0;
+			    border-color: #fff;
+			    top: -35px;
+			    height: 35px;
+
+			   
+ 		    }
+ 		    &:after{
+		    	content: "";
+			    display: block;
+			    position: absolute;
+			    width: 100%;
+ 		    	border-color: #005193;
+			    border-width: 0 5px 5px;
+			    border-style: solid;
+			    height: 85px$i;
+			    top: 0;
+ 		    }
+
+
+
+ 			@include respond-to(sm){
+				@include fonts(700, 30);
+				@include beforeWhite($brColorWhite: $white);
+				@include afterBlue($brColorBlue: $blue2);
+				
+				
+
+ 			}
+
+ 			@include m('equipe'){
+ 					
+			 	&:before{
+			 		border-width: 5px 5px 0;
+				    border-style: solid;
+				    border-color: #005193;
+				    content: "";
+				    display: block;
+				    position: absolute;
+				    width: 100%;				    
+			 		height: 30px;
+			 		top: -30px;
+			 		opacity: 0.5;
+			 	}
+ 			}
+			@include m('before-blue'){
+ 		 		color: $white;
+			 	
+			 	&:before{
+			 		border-width: 5px 5px 0;
+				    border-style: solid;
+				    border-color: #005193;
+				    content: "";
+				    display: block;
+				    position: absolute;
+				    width: 100%;				    
+			 		height: 30px;
+			 		top: -30px;
+			 	}
+			 	&:after{
+			 		border-color: #fff;
+				    border-style: solid;
+				    border-width: 0 5px 5px;
+				    width: 100%;
+				    display: block;
+				    content: "";
+				    position: absolute;
+			 		height: 65px;
+			 		top: 0px;
+			 	}
+			 	@include respond-to(sm){
+			 		@include beforeBlue($brColorBlue: $blue2);
+			 		@include afterWhite($brColorWhite: $white);
+			 	}
+
+			 	
+			}
+			@include m('design'){
+			 	top: 0;
+			 	color: $blue2;
+			 	&:before,&:after{
+			 		display: none;
+			 	}
+			 	&:after{
+			 		height: 195px$i;
+			 	}
+			 	@include respond-to(sm){
+			 		@include beforeWhiteRight($brColorWhite: $white);
+			 		@include afterBlueRight($brColorBlue: $blue2);
+
+			 	}
+			}
+			@include m('web'){
+			 	top: 0;
+			 	color: $blue2;
+				
+				&:before,&:after{
+			 		display: none;
+			 	}
+			 	&:after{
+			 		height: 195px$i;
+			 	}
+				@include respond-to(sm){
+			 		
+					 &:before {
+					    border-width: 0 0 0 5px;
+					    border-style: solid;
+					    border-color: $white;
+					    content: "";
+					    display: block;
+					    position: absolute;
+					    top: -25px;
+					    width: 100%;
+					    height: 25px;
+					   
+
+					   }
+					   &:after {
+					     border-color: $blue2;
+					     border-style: solid;
+					     border-width: 0 0 0 5px;
+					     height: 245px;
+					     width: 100%;
+					     display: block;
+					     top: 0;
+					     content: "";
+					     position: absolute;
+					    
+					  }
+			 	}
+			}
+			@include m('resultados'){
+			 	top: 0;
+			 	color: $blue2;
+				
+				&:before,&:after{
+			 		display: none;
+			 		height: 365px$i;
+			 	}
+
+				@include respond-to(sm){
+			 		// @include beforeGrayRight($brColorGray: $gray1);
+			 		// @include afterWhiteRight($brColorWhite: $white);
+			 	}
+			}
+			@include m('atendimento'){
+			 	top: 0;
+			 	color: $blue2;
+			 	max-width: 200px;
+			 	&:before,&:after{
+			 		display: none;
+			 		right: -29px;
+			 		
+			 	}
+			 	margin-right: 30px;
+			 	@include respond-to(sm){
+			 		@include beforeWhiteRightAtendimento($brColorWhite: $white);
+			 		@include afterBlueRightAtendimento($brColorBlue: $blue2);
+
+			 		span{
+			 			display: inline-block;
+					    line-height: 38px;
+						margin-top: 15px;
+					    text-align: right;
+					    color: #007cdb;
+			 		}
+			 	}
+			}
+	}
+	@include e('group'){
+		line-height: 40px;
+		text-align: left;
+
+ 		@include respond-to(sm){
+			line-height: 22px;
+			text-align: center;
+			margin: 20px 0;
+ 		}
+	
+		@include m('de'){
+			margin-top: 0px;
+
+			@include respond-to(sm){
+				margin-top: 80px;
+			}
+		}
+
+		@include m('we'){
+			margin-top: 0px;
+			text-align: center;
+
+			@include respond-to(sm){
+				margin-top: 80px;
+				text-align: inherit;
+			}
+		}
+		@include m('re'){
+			//margin-top: 0px;
+			//text-align: right;
+			//margin-left: 17%;
+
+			@include respond-to(sm){
+				//margin-top: 60px;
+				//text-align: left;
+			}
+		}
+		@include m('dna'){
+			text-align: left;
+			margin: 0;
+			color: #007cdb;
+			h5{
+				font-weight: 500;
+			    margin: 0;
+			    font-size: 17px;
+			    line-height: 1;
+			    color: #797979;
+			    letter-spacing: 8px;
+			    margin-left: 2px;
+			}
+		}
+		@include m('resultado'){
+			//margin-top: 0px;
+			text-align: left;
+			padding-left: 17px;
+			color: #007cdb;
+			//margin-left: 17%;
+			h5{
+				font-weight: 500;
+			    margin:0;
+			    font-size: 18px;
+			    line-height: 1;
+			    color: #797979;
+			}
+			@include respond-to(sm){
+				//margin-top: 60px;
+				//text-align: left;
+			}
+		}
+		// @include m('ta'){
+		// 	text-align: right;
+		// 	margin-left: 17%;
+
+		// 	@include respond-to(sm){
+		// 		text-align: left;
+		// 	}
+		// }
+		// @include m('sul'){
+		// 	text-align: right;
+		// 	margin-left: 17%;
+
+		// 	@include respond-to(sm){
+		// 		text-align: left;
+		// 	}
+		// }
+		// @include m('dos'){
+		// 	text-align: right;
+		// 	margin-left: 17%;
+
+		// 	@include respond-to(sm){
+		// 		text-align: left;
+		// 	}
+		// }
+		@include m('center'){
+			margin-top: 0px;
+			text-align: center;
+			line-height: normal;
+
+		// @include respond-to(sm){
+		// 	margin-top: 0px;
+		// 	text-align: inherit;
+
+		// }
+		}
+	}
+
+	@include e('letter'){
+
+		@include m('i'){
+			margin: 0 6px;
+		}
+		@include m('l'){
+			margin-right: 7px;
+		}
+	}
+
+	@include e('subtitle'){
+    	position: relative;
+    	text-align: center;
+    	margin: 30px 0;
+    	display: inline-block;
+    	width: 100%;
+    	letter-spacing: 3px;
+    	font-size: 13px;
+    	max-width: 600px;
+    	@include respond-to(sm){
+    		font-size: 18px;
+    		font-weight: 500;
+    	}
+
+    	@include m('right'){
+    		position: initial;
+    		text-align: left;
+    		padding-left: 0px;
+	    	margin: 0;
+	    	display: flex;
+	   	 	align-items: center;
+    		height: 180px;
+	    	font-size: 13px;
+	    	width: 100%;
+			@include respond-to(sm){
+    			@include span(.75);
+	    		//background: hsla(0, 100%, 100%, 0.13);
+    			height: 244px;
+    			padding-left: 30px;
+    			text-align: left;
+    			font-size: 16px;
+ 			}
+    	}
+    	@include m('atendimento'){
+    		position: initial;
+    		text-align: left;
+    		padding-left: 0px;
+	    	margin: 0;
+	    	display: flex;
+	   	 	align-items: flex-end;
+    		height: 180px;
+	    	font-size: 13px;
+	    	width: 100%;
+			@include respond-to(sm){
+    			@include span(.25);
+	    		background: hsla(0, 100%, 100%, 0.13);
+    			height: 244px;
+    			padding-left: 23px;
+    			text-align: left;
+    			font-size: 13px;
+ 			}
+    	}
+    	@include m('textwhite'){
+    		color: $white;
+    		font-size: 13px;
+
+    		@include respond-to(sm){
+    			font-size: 16px;
+    		}
+    	}
+    	@include m('txtright'){
+    		padding: 0;
+    		width: 100%;
+    		text-align: right$i;
+    	
+    		@include respond-to(sm){
+    			padding-left: 0px$i;
+    			padding-right: 30px$i;
+    			background: none;
+    		}
+    	}
+
+    	@include m('sobre-nos'){
+    		text-align: center;
+
+    		@include respond-to(sm){
+    			text-align: center;
+    		}
+    		@include respond-to(md){
+    			text-align: left;
+    		}
+    	}
+    	@include m('blue'){
+    		color: $blue2;
+    	}
+	}
+
+   
+}
+
+.title-servicos{
+	$self : &;
+ 	@extend %boxFull;
+ 	text-align: center;
+ 	margin: 60px 0;
+ 	@include respond-to(sm){
+ 		margin: 60px 0 0;
+ 	}
+ 	@include respond-to(md){
+ 		display: none;
+ 	}
+ 	span{
+ 		color: #ccc;
+ 		font-size: 20px;
+ 	}
+ 	h2{
+ 		color: $blue2;
+ 		font-size: 33px;
+    	margin: 0;
+    	letter-spacing: 3px;
+ 	}
+}
+.subtitle-servicos{
+	@extend %boxFull;
+	letter-spacing: 3px;
+	text-align:center;
+	@include respond-to(sm){
+		font-size: 16px;
+	}
+	font-size: 13px;
+	@include respond-to(md){
+ 		display: none;
+ 	}
+}
+
+
+.title-atendimento-mobile{
+	$self : &;
+ 	@extend %boxFull;
+ 	text-align: center;
+ 	margin: 60px 0;
+ 	@include respond-to(sm){
+ 		margin: 60px 0 0;
+ 	}
+ 	@include respond-to(md){
+ 		display: none;
+ 	}
+ 	span{
+ 		color: #ccc;
+ 		font-size: 20px;
+ 	}
+ 	h2{
+ 		color: #007cdb;
+ 		font-size: 33px;
+    	margin: 0;
+    	letter-spacing: 3px;
+ 	}
+}
+.subtitle-atendimento-mobile{
+	@extend %boxFull;
+	letter-spacing: 3px;
+	text-align:center;
+	@include respond-to(sm){
+		font-size: 16px;
+	}
+	font-size: 13px;
+	@include respond-to(md){
+ 		display: none;
+ 	}
+}
+

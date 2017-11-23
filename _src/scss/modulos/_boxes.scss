@@ -1,0 +1,150 @@
+.boxes{
+	@extend %boxFull;
+	display: flex;
+  justify-content: center;
+   flex-direction: column;
+    @include respond-to(sm){
+      flex-direction: column;
+    }
+     @include respond-to(md){
+      flex-direction: row;
+    }
+
+
+
+
+    @include m('reverse'){
+    	flex-direction: column;
+
+        @include respond-to(sm){
+          flex-direction: column;
+        }
+        @include respond-to(md){
+          flex-direction: row-reverse;
+        }
+    }
+
+ 
+
+
+
+
+    @include e('box-left'){
+    	@extend %boxFull;
+  		@include span(1);
+      position: relative;
+      height: 100%;
+      @include respond-to(sm){
+        @include span(1);
+      
+      }
+      @include respond-to(md){
+        @include span(.5);
+         height: 100%;
+      }
+    }
+
+    @include e('box-right'){
+    	@extend %boxFull;
+  		@include span(1);
+  			
+  		@include respond-to(sm){
+  			@include span(1);
+  		}
+      @include respond-to(md){
+        @include span(.5);
+        padding: 60px 0;
+      }
+    }
+
+
+    @include e('layer'){
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      //height: 130px;
+      display: none;
+      @include respond-to(sm){
+        display: block;
+      }
+    }
+
+  
+
+
+  @include e('pc'){
+    background: url(../images/pc.png)no-repeat;
+    width: 100%;
+    float: left;
+    height: 103%;
+    position: absolute;
+    margin: 0;
+    background-size: contain;
+    background-position-y: 100%;
+    display: none;
+    @include respond-to(sm){
+      display: none;
+    }
+    @include respond-to(md){
+      display: block;
+    }
+
+  }
+  @include e('resultado'){
+    background: url(../images/resultado.png)no-repeat;
+    width: 100%;
+    float: left;
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    background-size: contain;
+    background-position-y: 100%;
+    display: none;
+    @include respond-to(sm){
+      display: none;
+    }
+    @include respond-to(md){
+      display: block;
+    }
+
+  }
+}
+
+ .box__smarthphone{
+    @include span(1);
+    display: none;
+    position: absolute;
+    background: url(../images/smarth.png)no-repeat;
+    background-position-y: 100%;
+    background-position-x: 105%;
+    background-size: inherit;
+    height: 103%;
+    margin: 0;
+  
+       @include respond-to(sm){
+          display: none;
+        }
+        @include respond-to(md){
+          display: block;
+        }
+  }
+  .box__lapis{
+    @include span(1);
+    position: absolute;
+    display: none;
+    background: url(../images/lapis-box.png)no-repeat;
+    background-position-y: 100%;
+    background-size: inherit;
+    height: 103%;
+    margin: 0;
+  
+        @include respond-to(sm){
+          display: none;
+        }
+        @include respond-to(md){
+          display: block;
+        }
+    
+  }

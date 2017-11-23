@@ -1,0 +1,74 @@
+.header {
+    @extend %boxFull;
+    text-align: center;
+    margin: rem(40) auto;
+    padding: 0 30px;
+
+    @include e('titulo'){
+        @extend %titPrincipal;
+        position: relative;
+        padding: rem(25) 0 0;
+
+        b {
+            color: $cor-primaria;
+        }
+
+        &:before {
+            @extend .icon-sprite-sep;
+            @extend %centerPositionAll;
+            top: 0;
+            content: "";
+        }
+    }
+
+    @include e('titulo-branco'){
+        @extend %titPrincipal;
+        position: relative;
+        padding: rem(25) 0 0;
+        color: $white;
+
+        b {
+            color: $white;
+        }
+
+        @include m('verde'){
+            b {
+                color: $cor-primaria;
+            }
+        }
+
+        &:before {
+            @extend .icon-sprite-sep-branco;
+            @extend %centerPositionAll;
+            top: 0;
+            content: "";
+        }
+    }
+
+    @include e('desc'){
+        color: $cor-titulos;
+        font-size: rem(15);
+
+        @include respond-to(sm){
+            font-size: rem(18);
+        }
+    }
+}
+
+.headerTitle {
+    @extend %boxFull;
+    text-align: center;
+    margin: rem(40) auto;
+
+    @include e('tit'){
+        @extend %titPrincipal;
+    }
+
+    @include e('desc'){
+        font-size: rem(15);
+
+        @include respond-to(sm){
+            font-size: rem(18);
+        }
+    }
+}

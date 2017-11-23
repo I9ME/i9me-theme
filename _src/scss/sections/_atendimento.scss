@@ -1,0 +1,271 @@
+.atendimento{
+	$self : &;
+	@extend %boxFull;
+		background: url(../images/bg_atendimento.png);
+		background-position: center;
+    	background-size: cover;
+   	    background-attachment: fixed;
+		position: relative;
+		min-height: 865px;
+		margin-top: 30px;
+		padding-bottom: 70px;
+		@include respond-to(sm){
+			margin-top: 90px;
+			padding-bottom: 0px;
+		}
+
+		
+		@include e('boxform'){
+			@include span(1);
+			min-height: 378px;
+
+			@include respond-to(sm){
+				margin-top: 50px;
+				box-shadow:  0 0 1px 0 #000;
+			}
+		}
+
+		@include e('groupend'){
+			@include span(1);
+				
+				background: $blue2;
+				color: $white;
+				display: flex;
+			    align-items: center;
+			    flex-direction: column;
+			    justify-content: center;
+				
+				span{
+					display: inline-block;
+					margin-left: 3%;
+					text-align: left;
+					letter-spacing: 2px;
+					@include fonts(400,14);
+
+					strong{
+						
+						@include fonts(700,14);
+
+					}
+				}
+
+				@include respond-to(sm){
+			    	min-height: 378px;
+			    	
+					
+				}
+
+			@include respond-to(sm){
+				@include span(.3);
+				
+			
+			}
+		}
+		@include e('group'){
+			width: 72%;
+			text-align: left;
+			@include respond-to(sm){
+				width: 65%;
+			}
+			@include respond-to(md){
+				width: 75%;
+			}
+		}
+		@include e('contato'){
+			margin: 30px 0;
+			display: flex;
+		    align-items: center;
+		    justify-content: baseline;
+			@include respond-to(sm){
+				margin-bottom: 50px;
+				margin-top: 0;
+				display: inherit;
+			}
+		}
+		@include e('fone'){
+			margin: 30px 0;
+			
+			@include respond-to(sm){
+				margin-bottom: 50px;
+			}
+			    
+			    
+		}
+		@include e('endereco'){
+			margin: 30px 0;
+			display: flex;
+		    align-items: center;
+		    justify-content: baseline;
+			@include respond-to(sm){
+				margin: 0;
+				display: inherit;
+			}
+    		
+    		
+    		.fa2{
+    				vertical-align: top$i;
+    			}
+		}
+
+		@include e('form'){
+			@include span(1);
+			min-height: 378px;
+			background: #fff;
+			margin: 0$i;
+			padding: 6%;	
+			display: flex;
+			align-items: center;
+			@include respond-to(sm){
+			@include span(.70);
+				
+				padding: 3%;
+			}
+			
+				.form{
+					margin: 0;
+					@include fonts(500,12);
+					text-transform: uppercase;
+					.btn{
+						position: absolute;
+					    width: 36px;
+					    height: 31px;
+					    right: 0px$i;
+    					bottom: 0px$i;
+
+    					@include m('interno'){
+    						position: relative;
+    						//display: block;
+    						width: 10%;
+						    background: #000;
+						    float: left;
+						    height: 97px;
+						    margin-top: -27px;
+    					}
+					}
+				}
+				.form__msg{
+						float: left$i;
+					}
+				.form input:focus, .form select:focus, .form textarea:focus{
+					@extend %transitionAll;
+					border-color: transparent;
+					border-bottom: 1px solid $blue2;
+					border-right: 0;
+					border-left: 0;
+				}
+				.form textarea:focus, .form select:focus, .form textarea:focus{
+					border-right: 2px solid #fff$i;
+					border-left:  2px solid #fff$i;;
+					border-color: transparent;
+					border-bottom: 1px solid $blue2;
+				}
+				textarea{
+					position: relative;
+					background: $white;
+					border-bottom: 1px solid #aaa;
+					height: 70px;
+					min-height: 100%;
+					width: 100%;
+				    float: left;
+				    clear: both;
+				    padding-right: 15%;
+				    padding-left: 0;
+				    border-top: 0;
+				    border-right: 0;
+				    border-left: 0;
+				    @include respond-to(sm){
+						width: 100%;
+				    }
+				}
+				input{
+					position: relative;
+					background-color: #fff;
+					border-bottom: 1px solid #aaa;
+					border-right: 0;
+					border-left: 0;
+					border-top: 0;
+					width: 100%;
+					border-radius: 0;
+					margin-bottom: 9.7px;
+					padding: 0 4px$i;
+					@include respond-to(sm){
+						width: 100%;
+					}
+				}
+				input[type="submit"]{
+					margin: 25px 0;
+				    font-size: 0;
+				    background: url(../images/send-mail.png);
+				    background-color: transparent;
+				    //display: block;
+				    //border-right: 0;
+					//border-left: 0;
+					height: 28px$i;
+					border: 0;
+				    // position: absolute;
+				    // display: block;
+				    width: 35px$i;
+
+				    &:hover{
+				    	    background: url(../images/send-mail-hover.png);
+						    height: 27px;
+						    width: 35px;
+
+				    }
+
+				}
+				
+
+
+
+				@include respond-to(sm){
+					@include span(.7);
+				}
+		}
+
+		@include e('form-home'){
+			@include span(1);
+		}
+		@include e('input'){
+			@include span(1);
+			@include respond-to(sm){
+				@include col(.47, $cycle: 2);
+
+			}
+			label{
+				width: 100%;
+				float: left;
+				margin-bottom: 10px;
+			}
+
+			@include m('msg'){
+				@include span(1);
+				position: relative;
+
+				@include respond-to(sm){
+					@include span(1);
+					margin-right: 0;
+				}
+			}
+		}
+		@include e('btn'){
+			@include span(.05);
+			position: absolute;
+			right: 25px;
+
+			@include respond-to(sm){
+				right: 0px;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+}

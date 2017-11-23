@@ -1,0 +1,59 @@
+@mixin grids($div) {
+	.#{$div} {
+	    @include grid;
+	}
+}
+
+@mixin grid {
+
+	@include center(90%);
+	// @include respond-to(sm) {
+	// 	@include center($lg-sm);
+	// }
+
+	@include respond-to(md) {
+		@include center($lg-md);
+	}
+
+	@include respond-to(lg) {
+		// @include center($lg-xs);
+		@include center($lg-max);
+	}
+}
+
+@if($grid == 'true') {
+	@include grids($global-div);
+}
+
+.pages {
+	@extend %boxFull;
+
+	@include m('fale-conosco'){
+
+		.container {
+			padding-bottom: rem(80);
+			background: url('../images/casa-receita.png') right 95% no-repeat;
+		}
+	}
+}
+
+
+.grid {
+	@extend %boxFull;
+
+	@include m('col3'){
+
+		.grid__item {
+			@extend %boxFull;
+			margin-bottom: rem(120);
+
+			@include respond-to(sm){
+				@include col(1/2, $gutter: 2, $cycle: 2);
+			}
+
+			@include respond-to(md){
+				@include col(1/3, $gutter: 2, $cycle: 3);
+			}
+		}
+	}
+}

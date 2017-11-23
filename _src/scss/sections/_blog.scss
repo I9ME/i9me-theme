@@ -1,0 +1,88 @@
+.blog{
+	@extend %boxFull;
+		position: relative;
+		background: #fff;
+	
+	@include e('conteudo'){
+		@extend %boxFull;
+
+		img{
+    		object-fit: inherit$i;
+		}
+	}
+}
+.blog-boxe{
+	$self : &;
+	@extend %boxFull;
+	 	position: relative;
+		background: #fff;
+		list-style: none;
+		@include respond-to(sm){
+		    margin-top: 30px;
+		    margin-bottom: 60px;
+			//margin: 0 0 60px;
+			//padding: 0 90px$i;
+		}
+		@include e('item'){
+			@include span(1);
+				position: relative;
+				background: none;
+    			padding: 0 0 40px 0;
+				@include respond-to(sm){
+					background: #1172c0;
+					@include span(.5);
+					padding: 0;
+			}
+		}
+		@include e('figure'){
+			@include span(1);
+			height: auto;
+			margin: 0;
+			
+			@include respond-to(sm){
+				
+		    	//border: 1px solid rgba(0, 0, 0, 0.1);
+				display: inline-block;
+				max-width: 100%;
+				position: relative;
+				width: 100%;
+			}
+
+		    img{
+		    	display: block;
+		    	width: 100%;
+		    }
+		}
+		@include e('legend'){
+			@extend %transitionAll;
+		    position: relative;
+ 			top: -72px;
+		    left: inherit;
+		    background: none;
+		    padding: 0px 5%;
+		    width: 100%;
+		    background: rgba(45, 45, 45, 0.45);
+		    
+			@include respond-to(sm){
+    		background-color: rgba(0,13,51,0.92);
+		    bottom: 0;
+		    padding: 0;
+		    top: 0;
+		    left: 0;
+		    display: block;
+			height: 100%;
+		    opacity: 0;
+		    position: absolute;
+		    display: flex;
+		    align-items: center;
+		    justify-content: flex-end;
+	    	&:hover{
+	    		opacity: 1;
+				transition: all .6s;
+	    	}
+		}
+	}
+
+
+
+}

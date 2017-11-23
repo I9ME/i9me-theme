@@ -1,0 +1,80 @@
+// Toogle
+/*
+.toggle {    
+  width: 40px;
+  cursor: pointer;
+  display: inline-block;    
+  vertical-align: middle;
+  padding: 6px;
+  border-radius: $border-radius; 
+  margin-bottom: 5px;
+}
+
+.toggle span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  border-bottom: 2px solid $white;  
+  margin-bottom: 6px;
+  background-color: $white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.toggle.on ~ .menu, 
+.toggle.on + .menu {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  top: 100px;
+}
+
+.toggle.on {
+  background-color: $bgMenu;  
+
+  span{
+    border-color: $corMenu;
+  }
+}
+
+/* menu appearance*
+.menu {
+  @include prefix(transition,  all 0.2s linear); 
+  width: 240px;      
+  position: absolute;
+  top: 130px;
+  right: 10px;
+  border-radius: 5px;
+  background: $bgMenu;  
+  margin: auto;
+  text-align: center;
+
+  opacity: 0;     
+  visibility: hidden; 
+  z-index: 0;
+
+  ul{
+    width: 100%;
+    margin: 0;
+  }
+
+  li a{
+    width: 100%;
+    padding: 10px;
+    float: left;
+    color: $corMenu;
+    border-radius: 5px;
+
+    &:hover{
+      background-color: $hoverMenu;
+    }
+  }
+}
+

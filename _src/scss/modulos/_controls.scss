@@ -1,0 +1,32 @@
+.controls{
+	@include span(1);
+	    height: 65px;
+	    border: 1px solid #eee;
+	    margin: 30px 0 0;
+	    text-align: center;
+
+	    @include e('left'){
+	    	background: url(../images/control-left.png)no-repeat;
+	    	width: 30px;
+		    height: 22px;
+		    display: inline-block;
+		    margin: 20px;
+		    float: left;
+	    }
+	     @include e('right'){
+	    	background: url(../images/control-right.png)no-repeat;
+	    	width: 30px;
+		    height: 22px;
+		    display: inline-block;
+		    margin: 20px;
+		    float: right;
+	    }
+	     @include e('center'){
+	    	background: url(../images/control-center.png)no-repeat;
+	    	width: 35px;
+		    height: 35px;
+		    display: inline-block;
+		    margin: 14px;
+		  
+	    }
+}

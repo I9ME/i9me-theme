@@ -1,0 +1,115 @@
+//==========================================================================
+// PLACEHOLDER'S
+//==========================================================================
+%animabg  { @include transition(.28s); }
+
+// Fluxos de Página
+%displayBlock{
+	display: block;
+}
+
+%displayInline{
+	display: inline-block;
+}
+
+%displayNone{
+	display: none;
+}
+
+%boxFull {
+	@extend %floatLeft;
+	width: 100%;
+}
+
+%floatLeft{
+	float: left;
+}
+
+%floatRight{
+	float: right;
+}
+
+// Center Block
+%centerBlock{
+	display: block;
+	margin: {
+		right: auto;
+		left: auto;
+	}
+}
+
+// Center Position
+%centerPositionAll{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+//Animação Hover IMG-BG
+%animaHover {
+    img {
+        object-fit: cover;
+        min-height: 100%;
+        height: 100%;
+        width: 100%;
+        transition: all .5s ease-in-out;
+        transform: scale(1);
+        position: absolute;
+        will-change: transform;
+    }
+
+    &:hover {
+        img {
+            transition: all .5s ease-in-out;
+            transform: scale(1.2);
+        }
+    }
+}
+
+%resetHover {
+    &:hover {
+        img {
+            transform: scale(1);
+        }
+    }
+}
+
+// Transition All
+%transitionAll{
+	@include prefix(transition, all .2s);
+}
+
+// Image Replace sem Altura e largura
+%textIndentFull{
+	text-indent: -9999px;
+}
+
+// Transform Uppercase
+%textTransformU{
+	text-transform: uppercase;
+}
+
+// Image Propocional
+%imgProp{
+	@include size(100%, auto);
+}
+
+%titPrincipal {
+    font-size: rem(28);
+    font-family: $font-header;
+    color: $cor-titulos;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+%borderradius{
+    border: 1px solid #000;
+    border-radius: 25px;
+    display: inline-block;
+    height: 42px;
+    padding: 10px;
+    width: 42px;
+    color: #000;
+}
+
