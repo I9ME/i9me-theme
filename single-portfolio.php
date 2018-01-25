@@ -186,6 +186,34 @@
 			</div>
 		</div>
 	</section>
+	<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-1x3' ) { ?>
+	<section class="page-portfolio__seo colls-1x3">
+		<div class="container">
+			<div class="page-portfolio__box-imagem">
+				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+			</div>
+			<div class="page-portfolio__box-info">
+				<header class="page-portfolio__header">
+					<h2 class="page-portfolio__header-title"><?php echo the_title(); ?></h2>
+					<p  class="page-portfolio__header-subtitle"><?php echo get_the_content(); ?></p>
+				</header>
+			</div>
+		</div>
+	</section>
+	<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-3x1' ) { ?>
+	<section class="page-portfolio__seo colls-3x1">
+		<div class="container">
+			<div class="page-portfolio__box-info">
+				<header class="page-portfolio__header">
+					<h2 class="page-portfolio__header-title"><?php echo the_title(); ?></h2>
+					<p  class="page-portfolio__header-subtitle"><?php echo get_the_content(); ?></p>
+				</header>
+			</div>
+			<div class="page-portfolio__box-imagem">
+				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+			</div>
+		</div>
+	</section>
 	<?php } ?>
 	<?php endwhile; ?>
 	<?php wp_reset_query(); ?>

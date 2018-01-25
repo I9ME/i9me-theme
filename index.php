@@ -3,8 +3,8 @@
 <?php get_template_part('templates/portfolio','home');?>
 <?php get_template_part('templates/servicos','home');?>
 <?php get_template_part('templates/clientes','home');?>
+<?php get_template_part('templates/depoimentos','home');?>
 <?php get_template_part('templates/blog','home');?>
 <?php get_template_part('templates/atendimento','home');?>
-<?php get_template_part('templates/depoimentos','home');?>
 <?php get_template_part('templates/newsletter','home');?>
 <?php get_template_part('templates/html','footer');?>

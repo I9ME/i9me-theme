@@ -1,5 +1,5 @@
 <?php 
-	$page = get_page_by_path('portfolios');
+	$page = get_page_by_path('portfolio-i9me');
 	$resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
 	$resumoSection = $resumoSection[0];
  ?>
